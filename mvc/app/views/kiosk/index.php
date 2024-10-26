@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Available Lockers</title>
     <style>
-        html,
-        body {
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -32,7 +31,7 @@
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 1rem 0;
             font-weight: bold;
         }
@@ -44,48 +43,39 @@
 
         .box {
             background-color: #4CAF50;
-            padding: 10px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 3em;
-            border-radius: 10px;
-            margin: 10px 5px;
-            box-sizing: border-box;
+            border-radius: 15px;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .box1 {
-            height: 30vh;
-        }
-
-        .box4 {
-            height: 30vh;
-            width: 101%;
-            margin-left: -4px;
-        }
-
-        .box2,
-        .box3 {
-            height: 14.2vh;
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         .btn-secondary {
-            transition: background-color 0.3s;
-            font-size: 1.5em;
-            width: 100%;
-            height: 8vh;
-            border-radius: 100px;
-            background-color: #414761;
-            color: white;
-            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 60px;
             border: none;
+            border-radius: 30px;
+            background-color: #414761;
+            color: white;
+            font-size: 1.8em;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-secondary:hover {
             background-color: #2f3c4d;
+            transform: scale(1.05);
         }
 
         .col-md-6 {
@@ -93,7 +83,21 @@
         }
 
         .rent-now-container {
-            margin-top: 20px;
+            margin-top: 30px;
+        }
+
+        .box1 {
+            height: 30vh;
+        }
+
+        .box2, .box3 {
+            height: 14.2vh;
+        }
+
+        .box4 {
+            height: 30vh;
+            width: 100%;
+            margin-left: 0;
         }
     </style>
 </head>
@@ -116,9 +120,7 @@
             </div>
         </div>
         <div class="text-center rent-now-container">
-            <a href="<?= ROOT ?>/kiosk/rent" class="btn btn-secondary">
-                RENT NOW
-            </a>
+            <a href="<?= ROOT ?>/kiosk/rent" class="btn btn-secondary">RENT NOW</a>
         </div>
     </div>
 

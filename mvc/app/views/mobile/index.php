@@ -13,7 +13,7 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         .upper-bg {
@@ -55,6 +55,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            flex-direction: column;
         }
 
         .keypad {
@@ -90,13 +91,17 @@
         .confirm-button {
             width: 80%;
             max-width: 280px;
-            height: 55px;
+            height: 60px;
             background-color: white;
             color: black;
             border: 1px solid #ccc;
             font-weight: bold;
             transition: background-color 0.2s;
             font-size: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .confirm-button:hover {
@@ -136,7 +141,7 @@
             </button>
         </div>
         <div class="confirm-container">
-            <button class="btn confirm-button" id="confirmButton">Confirm</button>
+            <a class="btn btn-secondary confirm-button" id="confirmButton" href="#">Confirm</a>
         </div>
     </div>
 
@@ -190,8 +195,9 @@
         function confirmPin() {
             if (pin.length === 6) {
                 alert("PIN confirmed!");
+                window.location.href = '<?= ROOT ?>/mobile/credentials';
             } else {
-                alert("Please enter a 6-digit PIN.");
+                alert("Please enter a valid 6-digit PIN to proceed.");
             }
         }
 

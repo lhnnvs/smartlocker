@@ -28,9 +28,10 @@
             margin-bottom: 15px;
         }
 
-        .mt-3 {
+        h2 {
             font-size: 2.5em;
             margin: 15px 0;
+            font-weight: bold;
             text-align: center;
         }
 
@@ -45,24 +46,24 @@
         }
 
         .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 400px;
+            height: 60px;
             margin-top: 20px;
-            height: 8vh;
+            border: none;
             border-radius: 100px;
             background-color: #414761;
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-            border: none;
-            font-size: 1.5em;
+            font-size: 1.8em;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-secondary:hover {
             background-color: #2f3c4d;
-            color: white;
+            transform: scale(1.05);
         }
 
         .back-button {
@@ -70,7 +71,7 @@
             left: 20px;
             top: 20px;
             color: white;
-            font-size: 2em;
+            font-size: 1.8em;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -84,11 +85,9 @@
 <body>
     <a href="<?= ROOT ?>/kiosk/rent" class="back-button"><i class="fas fa-chevron-left"></i></a>
     <img src="../../public/assets/images/gcash.svg" class="logo" alt="GCash Logo">
-    <div class="mt-3">
-        <strong>SCAN TO PAY HERE</strong>
-    </div>
+    <h2>SCAN TO PAY HERE</h2>
     <canvas id="qr-code" width="400" height="400"></canvas>
-    <a href="<?= ROOT ?>/kiosk/setup" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>
+    <a href="<?= ROOT ?>/kiosk/setpin" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>

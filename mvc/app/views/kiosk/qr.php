@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Cash Payment</title>
+    <title>Scan QR Code</title>
     <style>
         body {
             background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
@@ -22,40 +22,41 @@
         }
 
         h2 {
-            font-size: 2.5em;
-            margin: 40px 0;
+            font-size: 4em;
             font-weight: bold;
+            font-style: italic;
             text-align: center;
+            margin: 0;
         }
 
-        .instruction {
+        .access-text {
             font-size: 1.8em;
+            margin: 10px 0;
+        }
+
+        canvas {
             margin: 20px 0;
-        }
-
-        .price-container {
-            margin: 30px 0;
-        }
-
-        .price-container span {
-            font-size: 3em;
-            font-weight: bold;
+            border: 16px solid white;
+            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            background: #f7f7f7;
+            box-sizing: border-box;
         }
 
         .btn-secondary {
+            width: 400px;
+            height: 60px;
+            margin-top: 20px;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 400px;
-            height: 60px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            border: none;
-            border-radius: 100px;
             background-color: #414761;
+            border-radius: 100px;
+            font-size: 1.8em;
             color: white;
             text-decoration: none;
-            font-size: 1.8em;
             transition: background-color 0.3s, transform 0.3s;
         }
 
@@ -63,35 +64,29 @@
             background-color: #2f3c4d;
             transform: scale(1.05);
         }
-
-        .back-button {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            color: white;
-            font-size: 1.8em;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .back-button:hover {
-            color: #ccc;
-        }
     </style>
 </head>
 
 <body>
-    <a href="<?= ROOT ?>/kiosk/rent" class="back-button">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <h2>INSERT YOUR PAYMENT BELOW</h2>
-    <div class="instruction">Please insert the exact amount</div>
-    <div class="price-container">
-        <span>Amount:</span>
-        <span id="amountDisplay">P<?= isset($_GET['amount']) ? htmlspecialchars($_GET['amount']) : '0' ?></span>
-    </div>
-    <a href="<?= ROOT ?>/kiosk/setpin" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>
+    <h2 class="mt-3">SCAN HERE</h2>
+    <div class="access-text">To Access Your Locker!</div>
+    <canvas id="qr-code" width="400" height="400"></canvas>
+    <a href="<?= ROOT ?>/kiosk" class="btn btn-secondary">Back</a>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        const qr = new QRious({
+            element: document.getElementById('qr-code'),
+            size: 400,
+        });
+
+        function generateRandomData() {
+            return Math.random().toString(36).substring(2, 15);
+        }
+
+        qr.value = generateRandomData();
+    </script>
 </body>
 
 </html>

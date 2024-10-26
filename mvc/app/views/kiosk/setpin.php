@@ -33,7 +33,7 @@
             left: 20px;
             top: 20px;
             color: white;
-            font-size: 2em;
+            font-size: 1.8em;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -88,7 +88,7 @@
             border-radius: 50%;
             margin: 10px;
             font-weight: bold;
-            transition: background-color 0.2s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .keypad button:hover {
@@ -105,17 +105,18 @@
         .confirm-button {
             width: 80%;
             max-width: 350px;
-            height: 65px;
+            height: 60px;
             background-color: white;
             color: black;
             border: 1px solid #ccc;
             font-weight: bold;
-            transition: background-color 0.2s;
+            transition: background-color 0.3s, transform 0.3s;
             font-size: 1.8rem;
         }
 
         .confirm-button:hover {
             background-color: #f8f9fa;
+            transform: scale(1.05);
         }
 
         .toggle-button {
@@ -134,7 +135,6 @@
 </head>
 
 <body>
-
     <div class="upper-bg">
         <a href="<?= ROOT ?>/kiosk/rent" class="back-button"><i class="fas fa-chevron-left"></i></a>
         <label class="mb-3" for="pinDisplay">Enter 6-digit PIN:</label>
@@ -173,6 +173,9 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         let pin = "";
         let isShowing = false;
@@ -205,10 +208,9 @@
 
         function confirmPin() {
             if (pin.length === 6) {
-                alert("PIN confirmed!");
-
+                alert("PIN saved!");
                 setTimeout(() => {
-                    window.location.href = "<?= ROOT ?>/kiosk";
+                    window.location.href = "<?= ROOT ?>/kiosk/qr";
                 }, 1000);
             } else {
                 alert("Please enter a 6-digit PIN.");
@@ -217,12 +219,6 @@
 
         document.getElementById('confirmButton').onclick = confirmPin;
     </script>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

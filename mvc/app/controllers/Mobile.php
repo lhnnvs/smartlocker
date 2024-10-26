@@ -6,4 +6,9 @@ class Mobile extends Controller
   {
     $this->view('mobile/index');
   }
+
+  public function credentials()
+  {
+    $this->view('mobile/credentials');
+  }
 }

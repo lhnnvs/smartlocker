@@ -22,8 +22,13 @@ class Kiosk extends Controller
     $this->view('kiosk/cash');
   }
 
-  public function setup()
+  public function setpin()
   {
-    $this->view('kiosk/setup');
+    $this->view('kiosk/setpin');
+  }
+
+  public function qr()
+  {
+    $this->view('kiosk/qr');
   }
 }

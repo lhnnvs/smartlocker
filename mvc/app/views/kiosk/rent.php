@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Renting Process</title>
     <style>
-        html,
-        body {
+        html, body {
             margin: 0;
             height: 100%;
             width: 100%;
@@ -26,29 +25,15 @@
         .container {
             max-width: 800px;
             width: 90%;
-            text-align: center;
+            padding: 20px;
+            margin: 20px;
         }
 
         h2 {
             font-size: 2.5em;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-weight: bold;
-            color: white;
-        }
-
-        .back-button {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 2em;
-            transition: color 0.3s;
-        }
-
-        .back-button:hover {
-            color: #ccc;
+            text-align: center;
         }
 
         .price-container {
@@ -56,57 +41,52 @@
             justify-content: space-between;
             align-items: center;
             margin: 1rem 0;
-            font-size: 1.6em;
+        }
+
+        .amount-label, .amount-value {
+            font-weight: bold;
+            font-size: 2em;
         }
 
         .label {
             text-align: left;
             margin-top: 1rem;
             font-size: 1.8em;
-            color: white;
-        }
-
-        .label.lockers {
-            font-weight: bold;
         }
 
         .dropdown-container {
             width: 100%;
             text-align: left;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
         }
 
-        .dropdown-wrapper {
+        .btn-secondary {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-        }
-
-        button,
-        .pay-button {
+            align-items: center;
+            justify-content: center;
             width: 100%;
+            height: 60px;
             margin-top: 20px;
-            height: 8vh;
-            font-size: 1.5em;
-            border-radius: 100px;
+            border: none;
+            border-radius: 30px;
             background-color: #414761;
             color: white;
-            border: none;
-            transition: background-color 0.3s;
+            font-size: 1.8em;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        button:hover,
-        .pay-button:hover {
+        .btn-secondary:hover {
             background-color: #2f3c4d;
+            transform: scale(1.05);
         }
 
         .dropdown-container select {
-            height: 8vh;
-            font-size: 1.6em;
-            padding: 8px;
-            border-radius: 10px;
             width: 100%;
+            height: 60px;
+            padding: 10px;
+            font-size: 1.8em;
+            border-radius: 10px;
             color: #000;
             background-color: #ffffff;
         }
@@ -120,11 +100,21 @@
             top: 10px;
             right: 20px;
             font-size: 1.8em;
-            color: white;
         }
 
-        .dropdown-container {
-            margin-top: 1.5rem;
+        .back-button {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.8em;
+            transition: color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #ccc;
         }
     </style>
 </head>
@@ -133,9 +123,10 @@
     <div class="time-display" id="currentTime"></div>
     <a href="<?= ROOT ?>/kiosk" class="back-button"><i class="fas fa-chevron-left"></i></a>
     <div class="container">
-        <label class="label lockers" for="lockerSelect">SELECT A LOCKER</label>
+        <h2 class="mb-4">SELECT A LOCKER</h2>
+
         <div class="dropdown-container">
-            <select id="lockerSelect" class="form-control">
+            <select id="lockerSelect" class="form-control" aria-label="Select locker">
                 <option value="" disabled selected>Select locker</option>
                 <option value="001" data-price="50">Locker 001 - Medium</option>
                 <option value="002" data-price="20">Locker 002 - Small</option>
@@ -145,14 +136,14 @@
         </div>
 
         <div class="price-container">
-            <span style="font-size: 1.5em; font-weight: bold;">Amount:</span>
-            <span id="amountDisplay" style="font-size: 1.5em; font-weight: bold;">P0</span>
+            <span class="amount-label">Amount:</span>
+            <span id="amountDisplay" class="amount-value">P0</span>
         </div>
 
         <div class="dropdown-wrapper">
             <label class="label" for="timeSelect">Select a time</label>
             <div class="dropdown-container">
-                <select id="timeSelect" class="form-control">
+                <select id="timeSelect" class="form-control" aria-label="Select time">
                     <option value="" disabled selected>Select time</option>
                     <option value="1">1 Hour</option>
                     <option value="2">2 Hours</option>
@@ -173,7 +164,7 @@
         <div class="dropdown-wrapper">
             <label class="label" for="paymentSelect">Payment method</label>
             <div class="dropdown-container">
-                <select id="paymentSelect" class="form-control">
+                <select id="paymentSelect" class="form-control" aria-label="Select payment method">
                     <option value="" disabled selected>Select payment</option>
                     <option value="gcash">GCash</option>
                     <option value="cash">Cash</option>
@@ -181,7 +172,7 @@
             </div>
         </div>
 
-        <button id="payButton" class="pay-button">PAY NOW</button>
+        <button id="payButton" class="btn-secondary">PAY NOW</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -194,7 +185,7 @@
             function updateAmount() {
                 const selectedHours = $('#timeSelect').val() || 1;
                 const totalAmount = lockerPrice * selectedHours;
-                $('#amountDisplay').text(`P${totalAmount}`);
+                $('#amountDisplay').text(`P${totalAmount.toFixed(2)}`);
             }
 
             $('#lockerSelect').change(function () {
@@ -219,24 +210,17 @@
                     return;
                 }
 
-                const totalAmount = $('#amountDisplay').text();
-                const amountValue = totalAmount.replace('P', '');
+                const totalAmount = $('#amountDisplay').text().replace('P', '').trim();
+                const baseUrl = `<?= ROOT ?>/kiosk/`;
+                const paymentType = paymentSelected === 'gcash' ? 'gcash' : 'cash';
 
-                if (paymentSelected === 'gcash') {
-                    window.location.href = `<?= ROOT ?>/kiosk/gcash?locker=${lockerSelected}&time=${timeSelected}&amount=${amountValue}`;
-                } else if (paymentSelected === 'cash') {
-                    window.location.href = `<?= ROOT ?>/kiosk/cash?locker=${lockerSelected}&time=${timeSelected}&amount=${amountValue}`;
-                }
+                window.location.href = `${baseUrl}${paymentType}?locker=${lockerSelected}&time=${timeSelected}&amount=${totalAmount}`;
             });
 
             function updateTime() {
                 const now = new Date();
-                const options = {
-                    hour: '2-digit',
-                    minute: '2-digit'
-                };
-                const timeString = now.toLocaleTimeString([], options);
-                $('#currentTime').text(timeString);
+                const options = { hour: '2-digit', minute: '2-digit' };
+                $('#currentTime').text(now.toLocaleTimeString([], options));
                 updateTimeOptions();
             }
 
