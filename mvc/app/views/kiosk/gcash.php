@@ -54,7 +54,7 @@
             margin-top: 20px;
             border: none;
             border-radius: 100px;
-            background-color: #414761;
+            background-color: #3a4058;
             color: white;
             text-decoration: none;
             font-size: 1.8em;
@@ -62,7 +62,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #2f3c4d;
+            background-color: #5c637d;
             transform: scale(1.05);
         }
 
@@ -84,7 +84,7 @@
 
 <body>
     <a href="<?= ROOT ?>/kiosk/rent" class="back-button"><i class="fas fa-chevron-left"></i></a>
-    <img src="../../public/assets/images/gcash.svg" class="logo" alt="GCash Logo">
+    <img src="../../public/assets/images/gcash.png" class="logo" alt="GCash Logo">
     <h2>SCAN TO PAY HERE</h2>
     <canvas id="qr-code" width="400" height="400"></canvas>
     <a href="<?= ROOT ?>/kiosk/setpin" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>

@@ -52,7 +52,7 @@
             margin-bottom: 40px;
             border: none;
             border-radius: 100px;
-            background-color: #414761;
+            background-color: #3a4058;
             color: white;
             text-decoration: none;
             font-size: 1.8em;
@@ -60,7 +60,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #2f3c4d;
+            background-color: #5c637d;
             transform: scale(1.05);
         }
 

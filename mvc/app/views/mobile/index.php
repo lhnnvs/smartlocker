@@ -9,103 +9,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            margin: 0;
-            height: 100vh;
             display: flex;
             flex-direction: column;
-            font-family: 'Roboto', sans-serif;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
+            color: white;
         }
 
-        .upper-bg {
-            flex: 1;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            max-width: 390px;
+            padding: 1rem;
+            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
             color: white;
-            padding: 20px;
+        }
+
+        .label {
+            font-size: 1.5rem;
+            margin-top: 2rem;
         }
 
         .pin-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
         }
 
         .pin-display {
-            font-size: 4rem;
-            padding: 15px;
             display: flex;
             justify-content: space-between;
-            width: 260px;
+            width: 15rem;
+            margin-left: 3rem;
         }
 
         .digit {
-            width: 40px;
-            text-align: center;
             font-size: 3rem;
-        }
-
-        .lower-bg {
-            flex: 1;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            flex-direction: column;
-        }
-
-        .keypad {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            max-width: 320px;
-        }
-
-        .keypad button {
-            width: 65px;
-            height: 65px;
-            font-size: 2rem;
-            border-radius: 50%;
-            margin: 8px;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-
-        .keypad button:hover {
-            background-color: #e9ecef;
-        }
-
-        .confirm-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .confirm-button {
-            width: 80%;
-            max-width: 280px;
-            height: 60px;
-            background-color: white;
-            color: black;
-            border: 1px solid #ccc;
-            font-weight: bold;
-            transition: background-color 0.2s;
-            font-size: 1.5rem;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .confirm-button:hover {
-            background-color: #f8f9fa;
         }
 
         .toggle-button {
@@ -113,20 +58,56 @@
             border: none;
             color: white;
             font-size: 1.5rem;
-            cursor: pointer;
-            margin-left: 10px;
         }
 
-        label {
+        .confirm-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+            width: 90%;
+            height: 4rem;
+            background-color: white;
+            color: black;
+            border: none;
+            font-weight: bold;
             font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .lower-bg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            width: 100%;
+            max-width: 390px;
+            padding: 1rem;
+            background-color: white;
+        }
+
+        .keypad {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .keypad button {
+            width: 5rem;
+            height: 4.5rem;
+            margin: 0.5rem;
+            font-size: 2rem;
+            border-radius: 100%;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="upper-bg">
-        <label class="mb-3" for="pinDisplay">Enter 6-digit PIN:</label>
+    <div class="container">
+        <label class="label" for="pinDisplay">Enter 6-digit PIN:</label>
         <div class="pin-container">
             <div class="pin-display" id="pinDisplay">
                 <div class="digit" id="digit1">_</div>
@@ -140,9 +121,7 @@
                 <i class="fas fa-eye" id="eyeIcon"></i>
             </button>
         </div>
-        <div class="confirm-container">
-            <a class="btn btn-secondary confirm-button" id="confirmButton" href="#">Confirm</a>
-        </div>
+        <a class="btn btn-secondary confirm-button" id="confirmButton" href="#">Confirm</a>
     </div>
 
     <div class="lower-bg">

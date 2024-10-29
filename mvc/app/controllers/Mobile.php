@@ -11,4 +11,14 @@ class Mobile extends Controller
   {
     $this->view('mobile/credentials');
   }
+
+  public function home()
+  {
+    $this->view('mobile/home');
+  }
+  
+  public function notifs()
+  {
+    $this->view('mobile/notifs');
+  }
 }

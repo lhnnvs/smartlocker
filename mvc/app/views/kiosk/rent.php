@@ -69,7 +69,7 @@
             margin-top: 20px;
             border: none;
             border-radius: 30px;
-            background-color: #414761;
+            background-color: #3a4058;
             color: white;
             font-size: 1.8em;
             text-decoration: none;
@@ -77,7 +77,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #2f3c4d;
+            background-color: #5c637d;
             transform: scale(1.05);
         }
 

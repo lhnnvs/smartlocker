@@ -52,7 +52,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #414761;
+            background-color: #3a4058;
             border-radius: 100px;
             font-size: 1.8em;
             color: white;
@@ -61,7 +61,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #2f3c4d;
+            background-color: #5c637d;
             transform: scale(1.05);
         }
     </style>
