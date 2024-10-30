@@ -7,9 +7,9 @@ class Mobile extends Controller
     $this->view('mobile/index');
   }
 
-  public function credentials()
+  public function contact()
   {
-    $this->view('mobile/credentials');
+    $this->view('mobile/contact');
   }
 
   public function home()
@@ -17,8 +17,28 @@ class Mobile extends Controller
     $this->view('mobile/home');
   }
   
-  public function notifs()
+  public function notifications()
   {
-    $this->view('mobile/notifs');
+    $this->view('mobile/notifications');
+  }
+
+  public function terminate()
+  {
+    $this->view('mobile/terminate');
+  }
+
+  public function access()
+  {
+    $this->view('mobile/access');
+  }
+
+  public function verify()
+  {
+    $this->view('mobile/verify');
+  }
+
+  public function error()
+  {
+    $this->view('mobile/error');
   }
 }

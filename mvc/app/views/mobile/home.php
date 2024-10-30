@@ -38,7 +38,7 @@
             text-align: center;
             font-weight: bold;
             font-size: 1.5rem;
-            margin-left: 2.5rem;
+            margin-left: 4rem;
         }
 
         .icon-container {
@@ -77,19 +77,19 @@
             font-weight: bold;
         }
 
-        .large-number {
+        .locker-number {
             font-size: 3rem;
             font-weight: bold;
             margin: 0;
             color: white;
         }
 
-        .small-label {
+        .sub-label {
             font-size: 1rem;
             color: lightgray;
         }
 
-        .circle-button {
+        .lock-button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,11 +154,14 @@
         <div class="heading-container">
             <div></div>
             <div class="heading">SmartLocker</div>
+
             <div class="icon-container">
-                <a href="<?= ROOT ?>/mobile/notifs" class="icon-link">
+                <a href="<?= ROOT ?>/mobile/notifications" class="icon-link">
                     <i class="fas fa-bell icon"></i>
                 </a>
-                <i class="fas fa-ellipsis-v icon"></i>
+                <a href="<?= ROOT ?>/mobile/verify" class="icon-link">
+                    <i class="fas fa-sign-out-alt icon"></i>
+                </a>
             </div>
         </div>
         <div class="dark-section">
@@ -167,12 +170,28 @@
                 <div>09012345678</div>
             </div>
         </div>
-        <div class="large-number">002</div>
-        <div class="small-label">Locker</div>
-        <button class="circle-button" id="lockButton">
-            <i class="fas fa-lock" id="lockIcon"></i>
+        <div class="locker-number">002</div>
+        <div class="sub-label">Locker</div>
+
+        <?php
+        $status = isset($_GET['status']) ? $_GET['status'] : 'locked';
+
+        if ($status === 'unlocked') {
+            $actionLabel = "Touch to Lock";
+            $statusValueClass = "status-unlocked";
+            $statusValueText = "Unlocked";
+        } else {
+            $actionLabel = "Touch to Unlock";
+            $statusValueClass = "status-locked";
+            $statusValueText = "Locked";
+        }
+        ?>
+
+        <button class="lock-button" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'">
+            <i class="fas fa-<?= $status === 'locked' ? 'lock' : 'unlock' ?>" id="lockIcon"></i>
         </button>
-        <div class="action-label" id="actionLabel">Touch to Unlock</div>
+        <div class="action-label" id="actionLabel"><?= $actionLabel ?></div>
+
         <div class="box-container">
             <div class="box-heading">Locker 002</div>
             <div class="info-row">
@@ -181,7 +200,7 @@
             </div>
             <div class="info-row">
                 <div class="info-label">Status</div>
-                <div class="info-value" id="statusValue" class="status-unlocked"></div>
+                <div class="info-value <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
             </div>
             <div class="info-row">
                 <div class="info-label">From</div>
@@ -193,32 +212,8 @@
             </div>
         </div>
     </div>
+    
     <script>
-        document.getElementById('lockButton').addEventListener('click', function() {
-            const icon = document.getElementById('lockIcon');
-            const actionLabel = document.getElementById('actionLabel');
-            const statusValue = document.getElementById('statusValue');
-            const button = this;
-
-            if (icon.classList.contains('fa-lock-open')) {
-                icon.classList.remove('fa-lock-open');
-                icon.classList.add('fa-lock');
-                actionLabel.textContent = 'Touch to Unlock';
-                button.classList.remove('unlocked');
-                statusValue.textContent = 'Locked';
-                statusValue.classList.remove('status-unlocked');
-                statusValue.classList.add('status-locked');
-            } else {
-                icon.classList.remove('fa-lock');
-                icon.classList.add('fa-lock-open');
-                actionLabel.textContent = 'Touch to Lock';
-                button.classList.add('unlocked');
-                statusValue.textContent = 'Unlocked';
-                statusValue.classList.remove('status-locked');
-                statusValue.classList.add('status-unlocked');
-            }
-        });
-
         function getQueryParams() {
             const params = {};
             window.location.search.substring(1).split('&').forEach(param => {

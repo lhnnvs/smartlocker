@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Credentials</title>
+    <title>Error Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,29 +26,13 @@
             max-width: 390px;
         }
 
-        .label-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .label {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .back-button {
-            font-size: 1.5em;
-            color: white;
-        }
-
-        .notifs {
-            margin: 15rem 0 1rem 0;
+        .error {
+            margin: 10rem 0 1rem 0;
         }
 
         .notification-message {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-align: center;
             margin-bottom: 1rem;
         }
@@ -58,19 +42,24 @@
             text-align: center;
             color: lightgray;
         }
+
+        .btn-secondary {
+            width: 100%;
+            height: 3.5rem;
+            font-size: 1.5em;
+            background-color: #3a4058;
+            margin-top: 3rem;
+            border: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="label-container">
-            <a href="<?= ROOT ?>/mobile/home" class="back-button"><i class="fas fa-arrow-left"></i></a>
-            <label class="label">Notifications</label>
-            <div></div>
-        </div>
-        <img src="../../public/assets/images/notifs.png" class="notifs" alt="">
-        <div class="notification-message">No notifications yet</div>
-        <div class="info-message">Your notification will appear here<br>once you’ve received them.</div>
+        <img src="../../public/assets/images/error.png" class="error" alt="">
+        <div class="notification-message">Unfortunately, your<br>rental period has ended</div>
+        <div class="info-message">or it looks like you haven't<br>completed your rental process yet</div>
+        <button class="btn btn-secondary" id="backButton" onclick="window.location.href='<?= ROOT ?>/mobile'">Go back</button>
     </div>
 </body>
 

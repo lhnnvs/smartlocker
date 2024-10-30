@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIN Entry</title>
+    <title>Locker Access PIN Entry</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -26,6 +26,18 @@
             padding: 1rem;
             background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
             color: white;
+        }
+
+        .label-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .back-button {
+            color: white;
+            font-size: 1.5em;
         }
 
         .label {
@@ -107,7 +119,11 @@
 
 <body>
     <div class="container">
-        <label class="label" for="pinDisplay">Enter 6-digit PIN:</label>
+        <div class="label-container">
+            <a href="<?= ROOT ?>/mobile/home" class="back-button"><i class="fas fa-arrow-left"></i></a>
+            <label class="label" for="pinDisplay">Enter 6-digit PIN:</label>
+            <div></div>
+        </div>
         <div class="pin-container">
             <div class="pin-display" id="pinDisplay">
                 <div class="digit" id="digit1">_</div>
@@ -123,7 +139,7 @@
         </div>
         <a class="btn btn-secondary confirm-button" id="confirmButton" href="#">Confirm</a>
     </div>
-    
+
     <div class="keypad-bg">
         <div class="keypad">
             <div class="col-4"><button class="btn btn-light" onclick="addDigit(1)">1</button></div>
@@ -173,8 +189,15 @@
 
         function confirmPin() {
             if (pin.length === 6) {
-                alert("PIN confirmed!");
-                window.location.href = '<?= ROOT ?>/mobile/contact';
+                const params = new URLSearchParams(window.location.search);
+                const action = params.get('action');
+                if (action === 'unlock') {
+                    alert("PIN confirmed! Locker unlocked.");
+                    window.location.href = '<?= ROOT ?>/mobile/home?status=unlocked';
+                } else if (action === 'lock') {
+                    alert("PIN confirmed! Locker locked.");
+                    window.location.href = '<?= ROOT ?>/mobile/home?status=locked';
+                }
             } else {
                 alert("Please enter a valid 6-digit PIN to proceed.");
             }
