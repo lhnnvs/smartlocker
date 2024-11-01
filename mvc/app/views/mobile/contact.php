@@ -30,7 +30,7 @@
             font-size: 1.5em;
         }
 
-        .label {
+        h2 {
             font-size: 1.5rem;
             font-weight: bold;
             margin-top: 2rem;
@@ -65,7 +65,7 @@
 <body> 
     <div class="container">
         <a href="<?= ROOT ?>/mobile" class="back-button"><i class="fas fa-arrow-left"></i></a>
-        <label class="label" for="userName">Enter your name<br>and your phone number:</label>
+        <h2 for="userName">Enter your name<br>and your phone number:</h2>
         <div class="input-container">
             <label for="userName">NAME</label>
             <input type="text" id="userName" class="form-control" placeholder="Enter your name" required>

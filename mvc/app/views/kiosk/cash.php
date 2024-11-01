@@ -4,94 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Cash Payment</title>
     <style>
         body {
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
+            background-image: url('../assets/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        h2 {
-            font-size: 2.5em;
-            margin: 40px 0;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .instruction {
-            font-size: 1.8em;
-            margin: 20px 0;
-        }
-
-        .price-container {
-            margin: 30px 0;
-        }
-
-        .price-container span {
-            font-size: 3em;
-            font-weight: bold;
+        .container {
+            max-width: 600px;
         }
 
         .btn-secondary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 400px;
-            height: 60px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            border: none;
-            border-radius: 100px;
             background-color: #3a4058;
-            color: white;
-            text-decoration: none;
-            font-size: 1.8em;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5c637d;
-            transform: scale(1.05);
-        }
-
-        .back-button {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            color: white;
-            font-size: 1.8em;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .back-button:hover {
-            color: #ccc;
         }
     </style>
 </head>
 
-<body>
-    <a href="<?= ROOT ?>/kiosk/rent" class="back-button">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <h2>INSERT YOUR PAYMENT BELOW</h2>
-    <div class="instruction">Please insert the exact amount</div>
-    <div class="price-container">
-        <span>Amount:</span>
-        <span id="amountDisplay">P<?= isset($_GET['amount']) ? htmlspecialchars($_GET['amount']) : '0' ?></span>
+<body class="d-flex text-white min-vh-100 fs-2 p-5">
+    <div class="container d-flex flex-column flex-fill">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/kiosk/rent" style="color: white;"><i class="bi bi-chevron-left"></i></a>
+            <div></div>
+        </div>
+        <div class="d-flex flex-fill align-items-center justify-content-center w-100">
+            <div class="text-center border-0 rounded-5 p-5" style="background-image: url('../assets/images/bg.jpg');">
+                <h1 class="fw-bold">INSERT YOUR PAYMENT BELOW</h1>
+                <label class="text-light mt-4">Please put the exact amount</label>
+                <div class="mt-4">
+                    <label class="fw-bold">Amount: </label>
+                    <label class="fw-bold" id="amountDisplay">P<?= isset($_GET['amount']) ? htmlspecialchars($_GET['amount']) : '0' ?></label>
+                </div>
+                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'">SET YOUR 6-DIGIT PIN</button>
+            </div>
+        </div>
     </div>
-    <a href="<?= ROOT ?>/kiosk/setpin" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -5,177 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIN Entry</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
+            background-image: url('../assets/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        .upper-bg {
+        .container {
+            max-width: 600px;
+        }
+
+        .flex-fill {
             flex: 1;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 20px;
-            position: relative;
-        }
-
-        .back-button {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            color: white;
-            font-size: 1.8em;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .back-button:hover {
-            color: #ccc;
-        }
-
-        .pin-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .pin-display {
-            font-size: 4rem;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            width: 350px;
         }
 
         .digit {
-            width: 50px;
-            text-align: center;
+            width: 3rem;
             font-size: 4rem;
         }
 
-        .lower-bg {
-            flex: 1;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
         .keypad {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
             max-width: 400px;
         }
 
-        .keypad button {
-            width: 80px;
-            height: 80px;
-            font-size: 2.5rem;
-            border-radius: 50%;
-            margin: 10px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .keypad button:hover {
-            background-color: #e9ecef;
-        }
-
-        .confirm-container {
-            width: 100%;
+        .col-4 {
             display: flex;
             justify-content: center;
-            margin-top: 15px;
         }
 
-        .confirm-button {
-            width: 80%;
-            max-width: 350px;
-            height: 60px;
-            background-color: white;
-            color: black;
-            border: 1px solid #ccc;
+        .keypad button {
+            width: 8rem;
+            height: 4rem;
+            font-size: 2rem;
+            border-radius: 50rem;
             font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
-            font-size: 1.8rem;
-        }
-
-        .confirm-button:hover {
-            background-color: #f8f9fa;
-            transform: scale(1.05);
-        }
-
-        .toggle-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        label {
-            font-size: 1.8rem;
+            margin: 1rem;
         }
     </style>
 </head>
 
-<body>
-    <div class="upper-bg">
-        <a href="<?= ROOT ?>/kiosk/rent" class="back-button"><i class="fas fa-chevron-left"></i></a>
-        <label class="mb-3" for="pinDisplay">Enter 6-digit PIN:</label>
-        <div class="pin-container">
-            <div class="pin-display" id="pinDisplay">
-                <div class="digit" id="digit1">_</div>
-                <div class="digit" id="digit2">_</div>
-                <div class="digit" id="digit3">_</div>
-                <div class="digit" id="digit4">_</div>
-                <div class="digit" id="digit5">_</div>
-                <div class="digit" id="digit6">_</div>
+<body class="d-flex flex-column justify-content-center text-white min-vh-100 fs-3">
+    <div class="container d-flex flex-fill flex-column py-4" style="background-image: url('../assets/images/bg.jpg');">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/kiosk/rent" style="color: white;"><i class="bi bi-chevron-left"></i></a>
+            <div></div>
+        </div>
+        <div class="d-flex flex-fill align-items-center justify-content-center text-center">
+            <div class="d-flex flex-column align-items-center">
+                <label class="" for="pinDisplay">Enter 6-digit PIN:</label>
+                <div class="d-flex">
+                    <div class="d-flex ms-5" id="pinDisplay">
+                        <div class="digit" id="digit1">_</div>
+                        <div class="digit" id="digit2">_</div>
+                        <div class="digit" id="digit3">_</div>
+                        <div class="digit" id="digit4">_</div>
+                        <div class="digit" id="digit5">_</div>
+                        <div class="digit" id="digit6">_</div>
+                    </div>
+                    <button class="bg-transparent border-0 ms-3" id="toggleButton" onclick="toggleShow()" style="color: lightgray;">
+                        <i class="bi bi-eye-fill" id="eyeIcon"></i>
+                    </button>
+                </div>
+                <button class="btn btn-light border-0 rounded-1 fw-bold fs-3 mt-4 w-75" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/kiosk/qr'">Confirm</button>
             </div>
-            <button class="toggle-button" id="toggleButton" onclick="toggleShow()">
-                <i class="fas fa-eye" id="eyeIcon"></i>
-            </button>
         </div>
-        <div class="confirm-container">
-            <button class="btn confirm-button" id="confirmButton">Confirm</button>
+    </div>
+    <div class="d-flex flex-fill">
+        <div class="container d-flex align-items-center bg-white">
+            <div class="keypad d-flex flex-wrap justify-content-center mx-auto">
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(1)">1</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(2)">2</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(3)">3</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(4)">4</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(5)">5</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(6)">6</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(7)">7</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(8)">8</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(9)">9</button></div>
+                <div class="col-4"></div>
+                <div class="col-4"><button class="btn btn-light" onclick="addDigit(0)">0</button></div>
+                <div class="col-4"><button class="btn btn-light" onclick="removeDigit()">&#x232B;</button></div>
+            </div>
         </div>
     </div>
 
-    <div class="lower-bg">
-        <div class="keypad">
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(1)">1</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(2)">2</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(3)">3</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(4)">4</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(5)">5</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(6)">6</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(7)">7</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(8)">8</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(9)">9</button></div>
-            <div class="col-4"></div>
-            <div class="col-4"><button class="btn btn-light" onclick="addDigit(0)">0</button></div>
-            <div class="col-4"><button class="btn btn-light" onclick="removeDigit()">&#x232B;</button></div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script>
         let pin = "";
         let isShowing = false;
@@ -202,7 +122,7 @@
         function toggleShow() {
             isShowing = !isShowing;
             const eyeIcon = document.getElementById('eyeIcon');
-            eyeIcon.className = isShowing ? 'fas fa-eye-slash' : 'fas fa-eye';
+            eyeIcon.className = isShowing ? 'bi bi-eye-slash-fill' : 'bi bi-eye-fill';
             updateDisplay();
         }
 

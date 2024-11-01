@@ -4,93 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>GCash Payment</title>
     <style>
         body {
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            position: relative;
+            background-image: url('../assets/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        .logo {
-            width: 400px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin: 15px 0;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        canvas {
-            margin: 15px 0;
-            border: 16px solid white;
-            border-radius: 10px;
-            background: #f7f7f7;
-            width: 400px;
-            height: 400px;
-            box-sizing: border-box;
+        .container {
+            max-width: 600px;
         }
 
         .btn-secondary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 400px;
-            height: 60px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 100px;
             background-color: #3a4058;
-            color: white;
-            text-decoration: none;
-            font-size: 1.8em;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5c637d;
-            transform: scale(1.05);
-        }
-
-        .back-button {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            color: white;
-            font-size: 1.8em;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .back-button:hover {
-            color: #ccc;
         }
     </style>
 </head>
 
-<body>
-    <a href="<?= ROOT ?>/kiosk/rent" class="back-button"><i class="fas fa-chevron-left"></i></a>
-    <img src="../../public/assets/images/gcash.png" class="logo" alt="GCash Logo">
-    <h2>SCAN TO PAY HERE</h2>
-    <canvas id="qr-code" width="400" height="400"></canvas>
-    <a href="<?= ROOT ?>/kiosk/setpin" class="btn btn-secondary">SET YOUR 6-DIGIT PIN</a>
+<body class="d-flex text-white min-vh-100 fs-3 p-5">
+    <div class="container d-flex flex-column">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/kiosk/rent" style="color: white;"><i class="bi bi-chevron-left"></i></a>
+            <div></div>
+        </div>
+        <div class="d-flex flex-fill flex-column align-items-center justify-content-center">
+            <img src="../../public/assets/images/gcash.png" class="w-75" alt="GCash Logo">
+            <h1 class="fw-bold mt-3">SCAN TO PAY HERE</h1>
+            <div class="d-flex justify-content-center border rounded-5 bg-white mt-3 p-4 w-50">
+                <canvas class="w-100" id="qr-code"></canvas>
+            </div>
+            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'">SET YOUR 6-DIGIT PIN</button>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/neocotic/qrious/master/dist/qrious.min.js"></script>
     <script>
         const qr = new QRious({
             element: document.getElementById('qr-code'),

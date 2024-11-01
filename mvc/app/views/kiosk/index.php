@@ -4,129 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Available Lockers</title>
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
         body {
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-image: url('assets/images/bg.jpg');
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .container {
-            max-width: 800px;
-            width: 90%;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        .row {
-            display: flex;
-            justify-content: center;
+            max-width: 600px;
         }
 
         .box {
-            background-color: #4CAF50;
-            padding: 20px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 3em;
-            border-radius: 15px;
-            margin: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            justify-content: center;
+            border-radius: 1rem;
+            background-color: #4CAF50;
         }
 
-        .box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        .box1,
+        .box4 {
+            height: 15rem;
+        }
+
+        .box2,
+        .box3 {
+            height: 6.7rem;
         }
 
         .btn-secondary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 60px;
-            border: none;
-            border-radius: 30px;
             background-color: #3a4058;
-            color: white;
-            font-size: 1.8em;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5c637d;
-            transform: scale(1.05);
-        }
-
-        .col-md-6 {
-            padding: 5px;
-        }
-
-        .rent-now-container {
-            margin-top: 30px;
-        }
-
-        .box1 {
-            height: 30vh;
-        }
-
-        .box2, .box3 {
-            height: 14.2vh;
-        }
-
-        .box4 {
-            height: 30vh;
-            width: 100%;
-            margin-left: 0;
         }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <h2 class="mb-4">Available Lockers</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="box box1">001</div>
+<body class="d-flex align-items-center text-white min-vh-100 fs-2 p-5">
+    <div class="container text-center">
+        <h1 class="fw-bold">Available Lockers</h1>
+        <div class="mt-4">
+            <div class="container d-flex justify-content-center gap-4">
+                <div class="col-6">
+                    <div class="box box1">001</div>
+                </div>
+                <div class="col-6 d-flex flex-column">
+                    <div class="box box2">002</div>
+                    <div class="box box3 mt-4">003</div>
+                </div>
             </div>
-            <div class="col-md-6 d-flex flex-column">
-                <div class="box box2 mb-2">002</div>
-                <div class="box box3">003</div>
+            <div class="col-12">
+                <div class="box box4 mt-4">004</div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box4">004</div>
-            </div>
-        </div>
-        <div class="text-center rent-now-container">
-            <a href="<?= ROOT ?>/kiosk/rent" class="btn btn-secondary">RENT NOW</a>
-        </div>
+        <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-4 w-100" id="rentButton" onclick="window.location.href='<?= ROOT ?>/kiosk/rent'">RENT NOW</button>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -69,7 +69,7 @@
         }
 
         #backButton {
-            width: 100%;
+                        width: 100%;
             height: 3.5rem;
             font-size: 1.5em;
             background-color: #3a4058;
