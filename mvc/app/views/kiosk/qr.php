@@ -4,77 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Scan QR Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>GCash Payment</title>
     <style>
         body {
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
+            background-image: url('../assets/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        h2 {
-            font-size: 4em;
-            font-weight: bold;
-            font-style: italic;
-            text-align: center;
-            margin: 0;
+        .container {
+            max-width: 600px;
         }
 
-        .access-text {
-            font-size: 1.8em;
-            margin: 10px 0;
-        }
-
-        canvas {
-            margin: 20px 0;
-            border: 16px solid white;
-            border-radius: 10px;
-            width: 400px;
-            height: 400px;
-            background: #f7f7f7;
-            box-sizing: border-box;
+        h1 {
+            font-size: 4rem;
         }
 
         .btn-secondary {
-            width: 400px;
-            height: 60px;
-            margin-top: 20px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: #3a4058;
-            border-radius: 100px;
-            font-size: 1.8em;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5c637d;
-            transform: scale(1.05);
         }
     </style>
 </head>
 
-<body>
-    <h2 class="mt-3">SCAN HERE</h2>
-    <div class="access-text">To Access Your Locker!</div>
-    <canvas id="qr-code" width="400" height="400"></canvas>
-    <a href="<?= ROOT ?>/kiosk" class="btn btn-secondary">Back</a>
+<body class="d-flex text-white min-vh-100 fs-2 p-5">
+    <div class="container d-flex flex-column">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/kiosk/rent" style="color: white;"><i class="bi bi-chevron-left"></i></a>
+            <div></div>
+        </div>
+        <div class="d-flex flex-fill flex-column align-items-center justify-content-center">
+            <h1 class="fw-bold"><i>SCAN HERE</i></h1>
+            <label class="mt-2">To Access Your Locker!</label>
+            <div class="d-flex justify-content-center border rounded-5 bg-white mt-4 p-4 w-50">
+                <canvas class="w-100" id="qr-code"></canvas>
+            </div>
+            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="BackButton" onclick="window.location.href='<?= ROOT ?>/kiosk'">Back</button>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/neocotic/qrious/master/dist/qrious.min.js"></script>
     <script>
         const qr = new QRious({
             element: document.getElementById('qr-code'),
