@@ -5,82 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Information Form</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            max-width: 390px;
-        }
-
-        .back-button {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 2rem;
-            color: white;
-        }
-
-        .input-container {
-            margin-top: 2rem;
-        }
-
-        label {
-            font-size: 1rem;
-            color: lightgray;
-        }
-
-        input.form-control {
-            height: 3.5rem;
-            font-size: 1.5em;
-        }
-
-        .btn-secondary {
-            width: 100%;
-            height: 3.5rem;
-            font-size: 1.5em;
-            background-color: #3a4058;
-            margin-top: 3rem;
-            border: none;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body> 
-    <div class="container">
-        <a href="<?= ROOT ?>/mobile" class="back-button"><i class="fas fa-arrow-left"></i></a>
-        <h2 for="userName">Enter your name<br>and your phone number:</h2>
-        <div class="input-container">
-            <label for="userName">NAME</label>
-            <input type="text" id="userName" class="form-control" placeholder="Enter your name" required>
+<body class="d-flex min-vh-100" style="background-color: #333;">
+    <div class="container d-flex flex-column text-white fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/mobile" style="color: white;"><i class="bi bi-arrow-left"></i></a>
+            <div></div>
         </div>
-        <div class="input-container">
-            <label for="userPhone">PHONE NUMBER</label>
-            <input type="tel" id="userPhone" class="form-control" placeholder="Enter your phone number" required inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        <div class="px-2">
+            <h2 class="fw-bold mt-5">Enter your name and your phone number:</h2>
+            <div class="mt-5">
+                <label class="text-light fs-6">NAME</label>
+                <input type="text" class="form-control fs-4" id="userName" placeholder="Name" required>
+            </div>
+            <div class="mt-4">
+                <label class="text-light fs-6">PHONE NUMBER</label>
+                <input type="tel" class="form-control fs-4" id="userPhone" placeholder="Phone number" required inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 mt-5 w-100" id="proceedButton" style="background-color: #3a4058">PROCEED</button>
         </div>
-        <button class="btn btn-secondary" id="proceedButton">PROCEED</button>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script>
         document.getElementById('proceedButton').addEventListener('click', function() {
             const userName = document.getElementById('userName').value;
@@ -88,7 +39,7 @@
 
             if (userName && userPhone) {
 
-                window.location.href = `<?= ROOT ?>/mobile/home?name=${encodeURIComponent(userName)}&phone=${encodeURIComponent(userPhone)}`;
+                window.location.href = `<?= ROOT ?>/mobile/terms?name=${encodeURIComponent(userName)}&phone=${encodeURIComponent(userPhone)}`;
             } else {
                 alert('Please fill in both fields.');
             }

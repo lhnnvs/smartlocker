@@ -11,6 +11,11 @@ class Mobile extends Controller
   {
     $this->view('mobile/contact');
   }
+  
+  public function terms()
+  {
+    $this->view('mobile/terms');
+  }
 
   public function home()
   {

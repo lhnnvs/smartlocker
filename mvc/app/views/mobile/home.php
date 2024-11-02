@@ -5,140 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartLocker</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            max-width: 390px;
-        }
-
-        .heading-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .heading {
-            display: block;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-left: 4rem;
-        }
-
-        .icon-container {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .icon {
-            display: inline-block;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .dark-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1rem;
-            min-width: 390px;
-            padding: 1rem 2rem;
-            background-color: #333;
-            font-size: 1rem;
-        }
-
-        .info-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: #444;
-            height: 2.5rem;
-        }
-
-        .name {
-            font-weight: bold;
-        }
-
-        .locker-number {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 0;
-            color: white;
-        }
-
-        .sub-label {
-            font-size: 1rem;
-            color: lightgray;
-        }
-
-        .lock-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 10rem;
-            height: 10rem;
-            margin-top: 2rem;
-            border-radius: 100%;
-            background-color: #3a4058;
-            color: white;
-            font-size: 2rem;
-            border: 0.5rem solid rgba(255, 255, 255, 0.2);
-        }
-
-        .action-label {
-            font-size: 1rem;
-            margin-top: 2rem;
-            color: lightgray;
-        }
-
-        .box-container {
-            width: 100%;
-            margin-top: 2rem;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            background-color: rgba(65, 71, 97, 0.4);
-            text-align: left;
-        }
-
-        .box-heading {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .info-label {
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            color: lightgray;
-        }
-
-        .info-value {
-            font-size: 1rem;
-            color: white;
-        }
-
         .status-locked {
             color: lightgreen;
         }
@@ -149,70 +18,63 @@
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <div class="heading-container">
-            <div></div>
-            <div class="heading">SmartLocker</div>
-
-            <div class="icon-container">
-                <a href="<?= ROOT ?>/mobile/notifications" class="icon-link">
-                    <i class="fas fa-bell icon"></i>
-                </a>
-                <a href="<?= ROOT ?>/mobile/verify" class="icon-link">
-                    <i class="fas fa-sign-out-alt icon"></i>
-                </a>
-            </div>
+<body class="d-flex text-white min-vh-100 fs-6" style="background-color: #222">
+    <div class="container d-flex flex-column align-items-center p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <a href="<?= ROOT ?>/mobile/notifications" class="text-white fs-4 mb-1"><i class="bi bi-bell-fill"></i></a>
+            <h2 class="fw-bold ms-2">SmartLocker</h2>
+            <a href="<?= ROOT ?>/mobile/verify" class="text-white fs-4 mb-1"><i class="bi bi-box-arrow-left"></i></a>
+    </div>
+    <div class="d-flex align-items-center justify-content-center mt-3 px-4 py-3 w-100" style="min-width: 390px; background-color: #333;">
+        <div class="d-flex justify-content-between border-0 rounded-1 px-3 py-2 w-100" style="background-color: #444;">
+            <div class="fw-bold">Guest</div>
+            <div>09012345678</div>
         </div>
-        <div class="dark-section">
-            <div class="info-container">
-                <div class="name">Guest</div>
-                <div>09012345678</div>
-            </div>
-        </div>
-        <div class="locker-number">002</div>
-        <div class="sub-label">Locker</div>
+    </div>
+    <h1 class="fw-bold mt-3" style="font-size: 3rem;">002</h1>
+    <div class="text-light">Locker</div>
 
-        <?php
-        $status = isset($_GET['status']) ? $_GET['status'] : 'locked';
+    <?php
+    $status = isset($_GET['status']) ? $_GET['status'] : 'locked';
 
-        if ($status === 'unlocked') {
-            $actionLabel = "Touch to Lock";
-            $statusValueClass = "status-unlocked";
-            $statusValueText = "Unlocked";
-        } else {
-            $actionLabel = "Touch to Unlock";
-            $statusValueClass = "status-locked";
-            $statusValueText = "Locked";
-        }
-        ?>
+    if ($status === 'unlocked') {
+        $actionLabel = "Touch to Lock";
+        $statusValueClass = "status-unlocked";
+        $statusValueText = "Unlocked";
+    } else {
+        $actionLabel = "Touch to Unlock";
+        $statusValueClass = "status-locked";
+        $statusValueText = "Locked";
+    }
+    ?>
 
-        <button class="lock-button" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'">
-            <i class="fas fa-<?= $status === 'locked' ? 'lock' : 'unlock' ?>" id="lockIcon"></i>
-        </button>
-        <div class="action-label" id="actionLabel"><?= $actionLabel ?></div>
+    <button class="d-flex align-items-center justify-content-center rounded-circle text-white fs-1 mt-4" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'" style="height: 10rem; width: 10rem; background-color: #3a4058; border: 0.5rem solid dimgray">
+        <i class="bi bi-<?= $status === 'locked' ? 'lock-fill' : 'unlock-fill' ?>" id="lockIcon"></i>
+    </button>
+    <div class="text-light mt-4" id="actionLabel"><?= $actionLabel ?></div>
 
-        <div class="box-container">
-            <div class="box-heading">Locker 002</div>
-            <div class="info-row">
-                <div class="info-label">Size</div>
-                <div class="info-value">Small</div>
+    <div class="text-start rounded-3 mt-4 p-3 w-100" style="background-color: #333">
+        <label for="" class="fw-bold">Locker 002</label>
+        <div class="d-flex justify-content-between">
+            <div class="text-light">
+                <div class="mt-1">Size</div>
+                <div class="mt-1">Status</div>
+                <div class="mt-1">From</div>
+                <div class="mt-1">Until</div>
             </div>
-            <div class="info-row">
-                <div class="info-label">Status</div>
-                <div class="info-value <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">From</div>
-                <div class="info-value" id="fromTime"></div>
-            </div>
-            <div class="info-row">
-                <div class="info-label">Until</div>
-                <div class="info-value" id="untilTime"></div>
+            <div class="text-end">
+                <div class="mt-1">Small</div>
+                <div class="mt-1 <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
+                <div class="mt-1" id="fromTime"></div>
+                <div class="mt-1" id="untilTime"></div>
             </div>
         </div>
     </div>
-    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script>
         function getQueryParams() {
             const params = {};

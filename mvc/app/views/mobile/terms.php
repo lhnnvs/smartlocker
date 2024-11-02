@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="background-color: #333;">
+    <div class="container d-flex flex-column flex-grow-1 overflow-auto bg-white p-4" style="max-width: 390px;">
+        <div class="d-flex justify-content-between">
+            <a href="<?= ROOT ?>/mobile/" class="fs-4" style="color: gray;"><i class="bi bi-arrow-left"></i></a>
+            <div></div>
+        </div>
+        <div class="px-2">
+            <h2 class="fw-bold mt-4">Terms of Service</h2>
+            <label for="" class="text-secondary">Last updated Nov 2nd 2024</label>
+            <div class="mt-4">
+                <h3 class="fw-bold">Summary</h3>
+                <p class="mt-2">Welcome to our Smart Rental Locker service! By using our lockers, you agree to these terms. Our lockers provide a convenient, secure way to store your belongings. Please read the following terms carefully to understand your rights and responsibilities while using our service.</p>
+            </div>
+            <div class="mt-4">
+                <h3 class="fw-bold">Terms</h3>
+                <div class="mt-2">
+                    <p><b>Acceptance of Terms</b><br>
+                        By accessing or using our Smart Rental Locker service, you agree to comply with and be bound by these Terms of Service. If you do not agree, please do not use our lockers.</p>
+
+                    <p><b>Contact Information</b><br>
+                        To rent a locker, you will need to provide your name and contact number. This information will be used solely for sending notifications or alerts regarding your rental.</p>
+
+                    <p><b>Rental Period</b><br>
+                        Lockers are available for rental for specified time periods. You agree to return the locker by the end of the rental period.</p>
+
+                    <p><b>Grace Period</b><br>
+                        A grace period of 24 hours will be allowed after the end of the rental period. If you do not retrieve your belongings by the end of the grace period, your items will be placed in our lost and found. If the items are not claimed within three months, we reserve the right to dispose of or donate them.</p>
+
+                    <p><b>Payment</b><br>
+                        All fees for locker rentals must be paid in advance. We accept payments via cash or GCash, and you are responsible for any applicable taxes or charges.</p>
+
+                    <p><b>Prohibited Items</b><br>
+                        You are prohibited from storing hazardous materials, perishable items, illegal substances, or any other items deemed inappropriate by us. We reserve the right to open lockers and dispose of prohibited items.</p>
+
+                    <p><b>Liability</b><br>
+                        We are not liable for any loss, theft, or damage to items stored in the lockers; use our service at your own risk. We recommend not storing valuables.</p>
+
+                    <p><b>Termination</b><br>
+                        We reserve the right to terminate your access to the service for any reason, including violation of these terms or other unacceptable behavior.</p>
+
+                    <p><b>Changes to Terms</b><br>
+                        We may update these Terms of Service at any time. Your continued use of the service after changes are made constitutes your acceptance of the new terms.</p>
+
+                    <p><b>Contact Information</b><br>
+                        For any questions or concerns regarding these terms, please contact us at 09058312848.</p><br><br>
+                </div>
+            </div>
+            <div class="d-flex position-fixed bottom-0 start-50 translate-middle-x bg-white p-4 w-100" style="max-width: 390px;">
+                <button class="btn btn-light border rounded-3 fs-5 w-100" id="declineButton" onclick="window.location.href='<?= ROOT ?>/mobile'">&#x10102; Decline</button>
+                <button class="btn btn-secondary border-0 rounded-3 text-whitems-4 fs-5 ms-3 w-100" id="proceedButton" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">&#x1F5F8; Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
