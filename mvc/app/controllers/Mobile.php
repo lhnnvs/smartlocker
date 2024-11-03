@@ -7,9 +7,9 @@ class Mobile extends Controller
     $this->view('mobile/index');
   }
 
-  public function contact()
+  public function userinfo()
   {
-    $this->view('mobile/contact');
+    $this->view('mobile/userinfo');
   }
   
   public function terms()

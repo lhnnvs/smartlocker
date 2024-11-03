@@ -4,93 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rental Termination</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 390px;
-        }
-
-        .label-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .label {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .back-button {
-            font-size: 1.5em;
-            color: white;
-        }
-
-        .terminate {
-            margin: 5rem 0 1rem 0;
-        }
-
-        .notification-message {
-            font-weight: bold;
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .info-message {
-            font-size: 1rem;
-            text-align: center;
-            color: lightgray;
-        }
-
-        #confirmButton {
-            width: 100%;
-            height: 3.5rem;
-            font-size: 1.5em;
-            background-color: red;
-            margin-top: 2rem;
-            border: none;
-        }
-
-        #backButton {
-                        width: 100%;
-            height: 3.5rem;
-            font-size: 1.5em;
-            background-color: #3a4058;
-            margin-top: 1rem;
-            border: none;
-        }
-    </style>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="<?= ROOT ?>../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
-    <div class="container">
-        <div class="label-container">
-            <a href="<?= ROOT ?>/mobile/home" class="back-button"><i class="fas fa-arrow-left"></i></a>
-            <label class="label">Retrieve</label>
+<body class="d-flex text-white min-vh-100" style="background-color: #222">
+    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="d-flex align-itmes-center justify-content-between w-100">
+            <a href="<?= ROOT ?>/mobile/home" class="text-white"><i class="bi bi-arrow-left"></i></a>
+            <div class="fw-bold me-2">Retrieve</div>
             <div></div>
         </div>
-        <img src="../../public/assets/images/terminate.png" class="terminate" alt="">
-        <div class="notification-message">Are you sure to end your rent?</div>
-        <div class="info-message">Make sure to retrieve all items before<br>closing</div>
-        <button class="btn btn-secondary" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
-        <button class="btn btn-secondary" id="backButton" onclick="window.location.href='<?= ROOT ?>/mobile/home'">Back to safety</button>
+        <div class="d-flex flex-fill flex-column align-items-center justify-content-center text-center px-5">
+            <img src="../../public/assets/images/terminate.png">
+            <h4 class="fw-bold mt-2">This will end your rent. Are you sure?</h4>
+            <div class="text-light fs-6 mt-2">Make sure to retrieve all items before closing</div>
+            <button class="btn btn-danger border-0 rounded-1 text-white fs-4 mt-4 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
+            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 mt-2 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">Back to safety</button>
+        </div>
     </div>
 </body>
 

@@ -4,74 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Credentials</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-            background: linear-gradient(to bottom, #4a4a4a, #1a1a1a);
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 390px;
-        }
-
-        .label-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .label {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-right: 1rem;
-        }
-
-        .back-button {
-            font-size: 1.5em;
-            color: white;
-        }
-
-        .notifications {
-            margin: 15rem 0 1rem 0;
-        }
-
-        .notification-message {
-            font-weight: bold;
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .info-message {
-            font-size: 1rem;
-            text-align: center;
-            color: lightgray;
-        }
-    </style>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="<?= ROOT ?>../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
-    <div class="container">
-        <div class="label-container">
-            <a href="<?= ROOT ?>/mobile/home" class="back-button"><i class="fas fa-arrow-left"></i></a>
-            <label class="label">Notifications</label>
+<body class="d-flex text-white min-vh-100" style="background-color: #222">
+    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="d-flex align-itmes-center justify-content-between w-100">
+            <a href="<?= ROOT ?>/mobile/home" class="text-white"><i class="bi bi-arrow-left"></i></a>
+            <div class="fw-bold">Notifications</div>
             <div></div>
         </div>
-        <img src="../../public/assets/images/notifications.png" class="notifications" alt="">
-        <div class="notification-message">No notifications yet</div>
-        <div class="info-message">Your notification will appear here<br>once you’ve received them.</div>
+        <div class="d-flex flex-fill flex-column align-items-center justify-content-center text-center">
+            <img src="../../public/assets/images/notifications.png">
+            <h2 class="fw-bold mt-3">No notifications yet</h2>
+            <div class="text-light fs-6 mt-2">Your notification will appear here<br>once you’ve received them.</div>
+        </div>
     </div>
 </body>
 

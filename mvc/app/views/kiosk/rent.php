@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renting Process</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= ROOT ?>../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -39,7 +39,7 @@
 
                 <div class="mt-5">
                     <label for="timeSelect" class="text-start text-light">Select a time</label>
-                    <div class="mt-3">
+                    <div class="mt-2">
                         <select class="border-0 rounded-1 p-2 w-100" id="timeSelect">
                             <option value="" disabled selected>Select time</option>
                             <?php for ($i = 1; $i <= 12; $i++): ?>
@@ -51,7 +51,7 @@
 
                 <div class="mt-5">
                     <label for="paymentSelect" class="text-start text-light">Payment method</label>
-                    <div class="mt3">
+                    <div class="mt-2">
                         <select class="border-0 rounded-1 p-2 w-100" id="paymentSelect">
                             <option value="" disabled selected>Select payment</option>
                             <option value="gcash">GCash</option>
@@ -66,8 +66,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="<?= ROOT ?>../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
             const basePrice = parseFloat("<?= isset($price) ? $price : '0' ?>");
