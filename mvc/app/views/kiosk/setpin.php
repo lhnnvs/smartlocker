@@ -38,7 +38,7 @@
         <div class="d-flex flex-fill align-items-center justify-content-center text-center">
             <div class="d-flex flex-column align-items-center">
                 <div>Enter 6-digit PIN:</div>
-                <div class="d-flex">
+                <div class="d-flex mb-4">
                     <div class="d-flex ms-5" id="pinDisplay">
                         <div class="digit" id="digit1">_</div>
                         <div class="digit" id="digit2">_</div>
@@ -51,7 +51,7 @@
                         <i class="bi bi-eye-fill" id="eyeIcon"></i>
                     </button>
                 </div>
-                <button class="btn btn-light border-0 rounded-1 fw-bold fs-3 mt-4 w-75" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/kiosk/qr'">Confirm</button>
+                <button class="btn btn-light border-0 rounded-1 fw-bold fs-3 w-75" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/kiosk/qr'">Confirm</button>
             </div>
         </div>
     </div>

@@ -17,9 +17,9 @@
             <div></div>
         </div>
         <div class="d-flex flex-fill flex-column align-items-center justify-content-center text-center">
-            <img src="../../public/assets/images/notifications.png">
-            <h2 class="fw-bold mt-3">No notifications yet</h2>
-            <div class="text-light fs-6 mt-2">Your notification will appear here<br>once you’ve received them.</div>
+            <img src="../../public/assets/images/notifications.png" class="mb-3">
+            <h2 class="fw-bold mb-2">No notifications yet</h2>
+            <div class="text-light fs-6">Your notification will appear here<br>once you’ve received them.</div>
         </div>
     </div>
 </body>

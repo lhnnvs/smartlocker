@@ -16,12 +16,12 @@
             <div></div>
         </div>
         <div class="d-flex flex-fill flex-column align-items-center justify-content-center px-5">
-            <img src="../../public/assets/images/gcash.png" class="w-75" alt="GCash Logo">
-            <h1 class="fw-bold mt-3">SCAN TO PAY HERE</h1>
-            <div class="d-flex justify-content-center border rounded-5 bg-white mt-3 p-4 w-50">
+            <img src="../../public/assets/images/gcash.png" class="mb-3 w-75" alt="GCash Logo">
+            <h1 class="fw-bold mb-3">SCAN TO PAY HERE</h1>
+            <div class="d-flex justify-content-center border rounded-5 bg-white mb-5 p-4 w-50">
                 <canvas class="w-100" id="qr-code"></canvas>
             </div>
-            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'" style="background-color: #3a4058">SET YOUR 6-DIGIT PIN</button>
+            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'" style="background-color: #3a4058">SET YOUR 6-DIGIT PIN</button>
         </div>
     </div>
 

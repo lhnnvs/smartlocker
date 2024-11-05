@@ -11,20 +11,20 @@
 
 <body class="d-flex flex-column min-vh-100" style="background-color: #333;">
     <div class="container d-flex flex-column flex-grow-1 overflow-auto bg-white p-4" style="max-width: 390px;">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mb-4">
             <a href="<?= ROOT ?>/mobile/" class="fs-4" style="color: gray;"><i class="bi bi-arrow-left"></i></a>
             <div></div>
         </div>
         <div class="px-2">
-            <h2 class="fw-bold mt-4">Terms of Service</h2>
-            <label for="" class="text-secondary">Last updated Nov 2nd 2024</label>
-            <div class="mt-4">
-                <h3 class="fw-bold">Summary</h3>
-                <p class="mt-2">Welcome to our Smart Rental Locker service! By using our lockers, you agree to these terms. Our lockers provide a convenient, secure way to store your belongings. Please read the following terms carefully to understand your rights and responsibilities while using our service.</p>
+            <h2 class="fw-bold">Terms of Service</h2>
+            <label for="" class="text-secondary mb-4">Last updated Nov 2nd 2024</label>
+            <div class="mb-4">
+                <h3 class="fw-bold mb-2">Summary</h3>
+                <p>Welcome to our Smart Rental Locker service! By using our lockers, you agree to these terms. Our lockers provide a convenient, secure way to store your belongings. Please read the following terms carefully to understand your rights and responsibilities while using our service.</p>
             </div>
-            <div class="mt-4">
-                <h3 class="fw-bold">Terms</h3>
-                <div class="mt-2">
+            <div>
+                <h3 class="fw-bold mb-2">Terms</h3>
+                <div >
                     <p><b>Acceptance of Terms</b><br>
                         By accessing or using our Smart Rental Locker service, you agree to comply with and be bound by these Terms of Service. If you do not agree, please do not use our lockers.</p>
 

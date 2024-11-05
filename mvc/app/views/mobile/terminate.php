@@ -17,11 +17,11 @@
             <div></div>
         </div>
         <div class="d-flex flex-fill flex-column align-items-center justify-content-center text-center px-5">
-            <img src="../../public/assets/images/terminate.png">
-            <h4 class="fw-bold mt-2">This will end your rent. Are you sure?</h4>
-            <div class="text-light fs-6 mt-2">Make sure to retrieve all items before closing</div>
-            <button class="btn btn-danger border-0 rounded-1 text-white fs-4 mt-4 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
-            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 mt-2 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">Back to safety</button>
+            <img src="../../public/assets/images/terminate.png" class="mb-2">
+            <h4 class="fw-bold mb-3">This will end your rent.<br>Are you sure?</h4>
+            <div class="text-light fs-6 mb-4">Make sure to retrieve all items<br>before closing</div>
+            <button class="btn btn-danger border-0 rounded-1 text-white fs-4 mb-3 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
+            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">Back to safety</button>
         </div>
     </div>
 </body>

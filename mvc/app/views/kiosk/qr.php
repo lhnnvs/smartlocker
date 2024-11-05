@@ -16,12 +16,12 @@
             <div></div>
         </div>
         <div class="d-flex flex-column flex-fill align-items-center justify-content-center px-5">
-            <h1 class="fw-bold" style="font-size: 4rem;"><i>SCAN HERE</i></h1>
-            <div class="mt-2">To Access Your Locker!</div>
-            <div class="d-flex justify-content-center border rounded-5 bg-white mt-4 p-4 w-50">
+            <h1 class="fw-bold mb-2" style="font-size: 4rem;"><i>SCAN HERE</i></h1>
+            <div class="mb-4">To Access Your Locker!</div>
+            <div class="d-flex justify-content-center border rounded-5 bg-white mb-5 p-4 w-50">
                 <canvas class="w-100" id="qr-code"></canvas>
             </div>
-            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="BackButton" onclick="window.location.href='<?= ROOT ?>/kiosk'" style="background-color: #3a4058">Back</button>
+            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-75" id="BackButton" onclick="window.location.href='<?= ROOT ?>/kiosk'" style="background-color: #3a4058">Back</button>
         </div>
     </div>
 

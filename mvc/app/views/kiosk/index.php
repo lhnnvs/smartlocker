@@ -20,19 +20,19 @@
 </head>
 <body class="d-flex min-vh-100" style="background-color: #333;">
     <div class="container d-flex flex-column justify-content-center text-center text-white fs-3 px-5 py-4" style="max-width: 768px; background-image: url('assets/images/bg.jpg'); background-size: cover;">
-        <h1 class="fw-bold">Available Lockers</h1>
-        <div class="mt-5 px-5">
-            <div class="container d-flex justify-content-center gap-4">
+        <h1 class="fw-bold mb-5">Available Lockers</h1>
+        <div class="px-5">
+            <div class="container d-flex justify-content-center gap-4 mb-4">
                 <div class="col-6">
                     <a href="<?= ROOT ?>/kiosk/rent?locker=1&size=medium&price=50.00" class="box" style="height: 15rem;">001</a>
                 </div>
                 <div class="col-6 d-flex flex-column">
-                    <a href="<?= ROOT ?>/kiosk/rent?locker=2&size=small&price=20.00" class="box" style="height: 6.7rem;">002</a>
-                    <a href="<?= ROOT ?>/kiosk/rent?locker=3&size=small&price=20.00" class="box mt-4" style="height: 6.7rem;">003</a>
+                    <a href="<?= ROOT ?>/kiosk/rent?locker=2&size=small&price=20.00" class="box mb-4" style="height: 6.7rem;">002</a>
+                    <a href="<?= ROOT ?>/kiosk/rent?locker=3&size=small&price=20.00" class="box" style="height: 6.7rem;">003</a>
                 </div>
             </div>
             <div class="col-12">
-                <a href="<?= ROOT ?>/kiosk/rent?locker=4&size=large&price=100.00" class="box mt-4" style="height: 15rem;">004</a>
+                <a href="<?= ROOT ?>/kiosk/rent?locker=4&size=large&price=100.00" class="box" style="height: 15rem;">004</a>
             </div>
         </div>
     </div>

@@ -20,56 +20,56 @@
 
 <body class="d-flex text-white min-vh-100 fs-6" style="background-color: #222">
     <div class="container d-flex flex-column align-items-center p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div class="d-flex align-items-center justify-content-between w-100">
+        <div class="d-flex align-items-center justify-content-between mb-3 w-100">
             <a href="<?= ROOT ?>/mobile/notifications" class="text-white fs-4 mb-2"><i class="bi bi-bell-fill"></i></a>
             <h2 class="fw-bold ms-3">SmartLocker</h2>
             <a href="<?= ROOT ?>/mobile/verify" class="text-white fs-4 mb-1 me-1"><i class="bi bi-box-arrow-left"></i></a>
-    </div>
-    <div class="d-flex align-items-center justify-content-center mt-3 px-4 py-3 w-100" style="min-width: 390px; background-color: #333;">
-        <div class="d-flex justify-content-between border-0 rounded-1 px-3 py-2 w-100" style="background-color: #444;">
-            <div class="fw-bold">Guest</div>
-            <div>09012345678</div>
         </div>
-    </div>
-    <h1 class="fw-bold mt-3" style="font-size: 3rem;">002</h1>
-    <div class="text-light">Locker</div>
-
-    <?php
-    $status = isset($_GET['status']) ? $_GET['status'] : 'locked';
-
-    if ($status === 'unlocked') {
-        $actionLabel = "Touch to Lock";
-        $statusValueClass = "status-unlocked";
-        $statusValueText = "Unlocked";
-    } else {
-        $actionLabel = "Touch to Unlock";
-        $statusValueClass = "status-locked";
-        $statusValueText = "Locked";
-    }
-    ?>
-
-    <button class="d-flex align-items-center justify-content-center rounded-circle text-white fs-1 mt-4" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'" style="height: 10rem; width: 10rem; background-color: #3a4058; border: 0.5rem solid dimgray">
-        <i class="bi bi-<?= $status === 'locked' ? 'lock-fill' : 'unlock-fill' ?>" id="lockIcon"></i>
-    </button>
-    <div class="text-light mt-4" id="actionLabel"><?= $actionLabel ?></div>
-
-    <div class="text-start rounded-3 mt-4 p-3 w-100" style="background-color: #333">
-        <label for="" class="fw-bold">Locker 002</label>
-        <div class="d-flex justify-content-between">
-            <div class="text-light">
-                <div class="mt-1">Size</div>
-                <div class="mt-1">Status</div>
-                <div class="mt-1">From</div>
-                <div class="mt-1">Until</div>
-            </div>
-            <div class="text-end">
-                <div class="mt-1">Small</div>
-                <div class="mt-1 <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
-                <div class="mt-1" id="fromTime"></div>
-                <div class="mt-1" id="untilTime"></div>
+        <div class="d-flex align-items-center justify-content-center mb-3 px-4 py-3 w-100" style="min-width: 390px; background-color: #333;">
+            <div class="d-flex justify-content-between border-0 rounded-1 px-3 py-2 w-100" style="background-color: #444;">
+                <div class="fw-bold">Guest</div>
+                <div>09012345678</div>
             </div>
         </div>
-    </div>
+        <h1 class="fw-bold" style="font-size: 3rem;">002</h1>
+        <div class="text-light mb-4">Locker</div>
+
+        <?php
+        $status = isset($_GET['status']) ? $_GET['status'] : 'locked';
+
+        if ($status === 'unlocked') {
+            $actionLabel = "Touch to Lock";
+            $statusValueClass = "status-unlocked";
+            $statusValueText = "Unlocked";
+        } else {
+            $actionLabel = "Touch to Unlock";
+            $statusValueClass = "status-locked";
+            $statusValueText = "Locked";
+        }
+        ?>
+
+        <button class="d-flex align-items-center justify-content-center rounded-circle text-white fs-1 mb-4" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'" style="height: 10rem; width: 10rem; background-color: #3a4058; border: 0.5rem solid dimgray">
+            <i class="bi bi-<?= $status === 'locked' ? 'lock-fill' : 'unlock-fill' ?>" id="lockIcon"></i>
+        </button>
+        <div class="text-light mb-4" id="actionLabel"><?= $actionLabel ?></div>
+
+        <div class="text-start rounded-3 p-3 w-100" style="background-color: #333">
+            <label for="" class="fw-bold mb-1">Locker 002</label>
+            <div class="d-flex justify-content-between">
+                <div class="text-light">
+                    <div class="mb-1">Size</div>
+                    <div class="mb-1">Status</div>
+                    <div class="mb-1">From</div>
+                    <div>Until</div>
+                </div>
+                <div class="text-end">
+                    <div class="mb-1">Small</div>
+                    <div class="mb-1 <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
+                    <div class="mb-1" id="fromTime"></div>
+                    <div id="untilTime"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -4,4 +4,7 @@
   <h2 class="home-title">Home Page</h2>
 </div>
 
-<?php include "partials/footer.php" ?>
+<script src="<?= ROOT ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

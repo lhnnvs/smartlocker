@@ -17,7 +17,7 @@
         </div>
         <div class="d-flex flex-fill align-items-center justify-content-center px-5">
             <div class="w-100">
-                <div class="text-center">
+                <div class="text-center mb-4">
                     <h1 class="fw-bold border-bottom border-1 pb-5">
                         <?php
                         if (isset($_GET['locker'], $_GET['size'], $_GET['price'])) {
@@ -32,35 +32,31 @@
                     </h1>
                 </div>
 
-                <div class="d-flex justify-content-between mt-4 w-100">
+                <div class="d-flex justify-content-between mb-5 w-100">
                     <div class="fw-bold" id="sizeDisplay"><?= isset($size) ? ucfirst($size) : 'Size' ?></div>
                     <div class="fw-bold" id="amountDisplay">P<?= isset($price) ? $price : '0' ?></div>
                 </div>
 
-                <div class="mt-5">
-                    <label for="timeSelect" class="text-start text-light">Select a time</label>
-                    <div class="mt-2">
-                        <select class="border-0 rounded-1 p-2 w-100" id="timeSelect">
-                            <option value="" disabled selected>Select time</option>
-                            <?php for ($i = 1; $i <= 12; $i++): ?>
-                                <option value="<?= $i ?>"><?= $i ?> Hour<?= $i > 1 ? 's' : '' ?></option>
-                            <?php endfor; ?>
-                        </select>
-                    </div>
+                <div class="mb-5">
+                    <label for="timeSelect" class="text-start text-light mb-2">Select a time</label>
+                    <select class="border-0 rounded-1 p-2 w-100" id="timeSelect">
+                        <option value="" disabled selected>Select time</option>
+                        <?php for ($i = 1; $i <= 12; $i++): ?>
+                            <option value="<?= $i ?>"><?= $i ?> Hour<?= $i > 1 ? 's' : '' ?></option>
+                        <?php endfor; ?>
+                    </select>
                 </div>
 
-                <div class="mt-5">
-                    <label for="paymentSelect" class="text-start text-light">Payment method</label>
-                    <div class="mt-2">
-                        <select class="border-0 rounded-1 p-2 w-100" id="paymentSelect">
-                            <option value="" disabled selected>Select payment</option>
-                            <option value="gcash">GCash</option>
-                            <option value="cash">Cash</option>
-                        </select>
-                    </div>
+                <div class="mb-5">
+                    <label for="paymentSelect" class="text-start text-light mb-2">Payment method</label>
+                    <select class="border-0 rounded-1 p-2 w-100" id="paymentSelect">
+                        <option value="" disabled selected>Select payment</option>
+                        <option value="gcash">GCash</option>
+                        <option value="cash">Cash</option>
+                    </select>
                 </div>
 
-                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-100" id="payButton" style="background-color: #3a4058" disabled>PAY NOW</button>
+                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-100" id="payButton" style="background-color: #3a4058" disabled>PAY NOW</button>
             </div>
         </div>
     </div>

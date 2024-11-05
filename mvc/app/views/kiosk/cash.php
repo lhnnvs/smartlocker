@@ -17,13 +17,13 @@
         </div>
         <div class="d-flex flex-fill align-items-center justify-content-center px-5">
             <div class="text-center">
-                <h1 class="fw-bold">INSERT YOUR PAYMENT BELOW</h1>
-                <div class="text-light mt-4">Please put the exact amount</div>
-                <div class="d-flex justify-content-center mt-4">
+                <h1 class="fw-bold mb-4">INSERT YOUR PAYMENT BELOW</h1>
+                <div class="text-light mb-4">Please put the exact amount</div>
+                <div class="d-flex justify-content-center mb-5">
                     <div class="fw-bold">Amount:</div>
                     <div class="fw-bold ms-2" id="amountDisplay">P<?= isset($_GET['amount']) ? htmlspecialchars($_GET['amount']) : '0' ?></div>
                 </div>
-                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 mt-5 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'" style="background-color: #3a4058">SET YOUR 6-DIGIT PIN</button>
+                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-75" id="setButton" onclick="window.location.href='<?= ROOT ?>/kiosk/setpin'" style="background-color: #3a4058">SET YOUR 6-DIGIT PIN</button>
             </div>
         </div>
     </div>
