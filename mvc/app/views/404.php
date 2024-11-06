@@ -15,7 +15,7 @@
       <h1 class="mb-4" style="font-size: 4rem;">404 - error</h1>
       <h2 class="mb-4">PAGE NOT FOUND</h2>
       <p class="text-light mb-5">Unfortunately, the page you were looking for may<br>have been moved, deleted, or never existed.</p>
-      <button type="submit" class="btn btn-dark border-1 rounded-pill w-50" style="border-color: gray">Back to home</button>
+      <button type="submit" class="btn btn-dark border rounded-pill w-50">Back to home</button>
     </div>
   </div>
 </body>

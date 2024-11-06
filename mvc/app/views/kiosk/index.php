@@ -11,14 +11,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 1rem;
             background-color: #4CAF50;
-            text-decoration: none;
+            border-radius: 1rem;
             color: white;
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="d-flex min-vh-100" style="background-color: #333;">
+<body class="d-flex bg-dark vh-100">
     <div class="container d-flex flex-column justify-content-center text-center text-white fs-3 px-5 py-4" style="max-width: 768px; background-image: url('assets/images/bg.jpg'); background-size: cover;">
         <h1 class="fw-bold mb-5">Available Lockers</h1>
         <div class="px-5">

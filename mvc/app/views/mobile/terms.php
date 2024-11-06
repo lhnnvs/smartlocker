@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #333;">
+<body class="d-flex flex-column bg-dark vh-100">
     <div class="container d-flex flex-column flex-grow-1 overflow-auto bg-white p-4" style="max-width: 390px;">
         <div class="d-flex justify-content-between mb-4">
-            <a href="<?= ROOT ?>/mobile/" class="fs-4" style="color: gray;"><i class="bi bi-arrow-left"></i></a>
+            <a href="<?= ROOT ?>/mobile/" class="text-secondary fs-4"><i class="bi bi-arrow-left"></i></a>
             <div></div>
         </div>
         <div class="px-2">
@@ -57,8 +57,8 @@
                 </div>
             </div>
             <div class="d-flex position-fixed bottom-0 start-50 translate-middle-x bg-white p-4 w-100" style="max-width: 390px;">
-                <button class="btn btn-light border rounded-3 fs-5 w-100" id="declineButton" onclick="window.location.href='<?= ROOT ?>/mobile'">&#x10102; Decline</button>
-                <button class="btn btn-secondary border-0 rounded-3 text-whitems-4 fs-5 ms-3 w-100" id="proceedButton" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">&#x1F5F8; Accept</button>
+                <button class="btn btn-light border fs-5 w-100" id="declineButton" onclick="window.location.href='<?= ROOT ?>/mobile'">&#x10102; Decline</button>
+                <button class="btn btn-dark fs-5 ms-3 w-100" id="proceedButton" onclick="window.location.href='<?= ROOT ?>/mobile/home'">&#x1F5F8; Accept</button>
             </div>
         </div>
     </div>

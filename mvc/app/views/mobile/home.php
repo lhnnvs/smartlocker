@@ -18,15 +18,15 @@
     </style>
 </head>
 
-<body class="d-flex text-white min-vh-100 fs-6" style="background-color: #222">
-    <div class="container d-flex flex-column align-items-center p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<body class="d-flex text-white bg-dark vh-100 fs-6">
+    <div class="container d-flex flex-column align-items-center p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex align-items-center justify-content-between mb-3 w-100">
             <a href="<?= ROOT ?>/mobile/notifications" class="text-white fs-4 mb-2"><i class="bi bi-bell-fill"></i></a>
             <h2 class="fw-bold ms-3">SmartLocker</h2>
             <a href="<?= ROOT ?>/mobile/verify" class="text-white fs-4 mb-1 me-1"><i class="bi bi-box-arrow-left"></i></a>
         </div>
-        <div class="d-flex align-items-center justify-content-center mb-3 px-4 py-3 w-100" style="min-width: 390px; background-color: #333;">
-            <div class="d-flex justify-content-between border-0 rounded-1 px-3 py-2 w-100" style="background-color: #444;">
+        <div class="d-flex align-items-center justify-content-center bg-black mb-3 px-4 py-3 w-100" style="min-width: 390px">
+            <div class="d-flex justify-content-between rounded-1 bg-dark px-3 py-2 w-100">
                 <div class="fw-bold">Guest</div>
                 <div>09012345678</div>
             </div>
@@ -48,12 +48,12 @@
         }
         ?>
 
-        <button class="d-flex align-items-center justify-content-center rounded-circle text-white fs-1 mb-4" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'" style="height: 10rem; width: 10rem; background-color: #3a4058; border: 0.5rem solid dimgray">
+        <button class="d-flex align-items-center justify-content-center bg-dark rounded-circle text-white fs-1 mb-4" id="lockButton" onclick="window.location.href='<?= ROOT ?>/mobile/access?action=<?= $status === 'locked' ? 'unlock' : 'lock' ?>'" style="height: 10rem; width: 10rem; border: 0.5rem solid gray">
             <i class="bi bi-<?= $status === 'locked' ? 'lock-fill' : 'unlock-fill' ?>" id="lockIcon"></i>
         </button>
         <div class="text-light mb-4" id="actionLabel"><?= $actionLabel ?></div>
 
-        <div class="text-start rounded-3 p-3 w-100" style="background-color: #333">
+        <div class="bg-dark rounded-3 text-start p-3 w-100">
             <label for="" class="fw-bold mb-1">Locker 002</label>
             <div class="d-flex justify-content-between">
                 <div class="text-light">

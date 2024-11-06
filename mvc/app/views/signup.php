@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
+  <title>Sign Up Form</title>
   <link rel="stylesheet" href="<?= ROOT ?>/assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -24,7 +24,15 @@
 
   <div class="d-flex justify-content-center bg-white fs-5 p-5 w-100">
     <form action="" method="POST" class="w-75">
-      <h3 class="fw-bold text-center my-5">Sign in</h3>
+      <h3 class="fw-bold text-center my-5">Sign up</h3>
+      <div class="d-flex flex-column mb-4">
+        <label for="" class="fw-bold mb-2">Full Name</label>
+        <input type="text" class="border-1 rounded p-2" name="password" placeholder="Enter your full name">
+      </div>
+      <div class="d-flex flex-column mb-4">
+        <label for="" class="fw-bold mb-2">Contact</label>
+        <input type="text" class="border-1 rounded p-2" name="password" placeholder="Enter your contact">
+      </div>
       <div class="d-flex flex-column mb-4">
         <label for="" class="fw-bold mb-2">Email</label>
         <input type="text" class="border-1 rounded p-2" name="email" placeholder="Enter your email address" value="<?= get_var('email') ?>">
@@ -34,7 +42,7 @@
         <input type="password" class="border-1 rounded p-2" name="password" placeholder="Enter your password">
       </div>
 
-      <?php if (!empty($errors)): ?>
+      <!-- <?php if (!empty($errors)): ?>
 
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <?php foreach ($errors as $error): ?>
@@ -44,11 +52,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-      <?php endif; ?>
+      <?php endif; ?> -->
 
       <div class="d-flex justify-content-center gap-5 mt-5 px-5">
-        <button type="submit" class="btn btn-dark rounded-pill w-100" style="background-color: #3a4058">Sign In</button>
-        <button type="button" class="btn btn-light border-1 rounded-pill w-100" onclick="window.location.href='<?= ROOT ?>/signup'" style="border-color: gray">Sign Up</button>
+        <button type="submit" class="btn btn-dark rounded-pill w-100" style="background-color: #3a4058">Sign Up</button>
+        <button type="button" class="btn btn-light border-1 rounded-pill w-100" onclick="window.location.href='<?= ROOT ?>/login'" style="border-color: gray">Cancel</button>
       </div>
     </form>
   </div>

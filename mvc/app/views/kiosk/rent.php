@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex min-vh-100" style="background-color: #333">
+<body class="d-flex bg-dark vh-100">
     <div class="container d-flex flex-column flex-fill text-white fs-3 px-5 py-4" style="max-width: 768px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex justify-content-between">
             <a href="<?= ROOT ?>/kiosk" class="text-white"><i class="bi bi-chevron-left"></i></a>
@@ -18,7 +18,7 @@
         <div class="d-flex flex-fill align-items-center justify-content-center px-5">
             <div class="w-100">
                 <div class="text-center mb-4">
-                    <h1 class="fw-bold border-bottom border-1 pb-5">
+                    <h1 class="fw-bold border-bottom pb-5">
                         <?php
                         if (isset($_GET['locker'], $_GET['size'], $_GET['price'])) {
                             $locker = htmlspecialchars($_GET['locker']);
@@ -39,7 +39,7 @@
 
                 <div class="mb-5">
                     <label for="timeSelect" class="text-start text-light mb-2">Select a time</label>
-                    <select class="border-0 rounded-1 p-2 w-100" id="timeSelect">
+                    <select class="rounded p-2 w-100" id="timeSelect">
                         <option value="" disabled selected>Select time</option>
                         <?php for ($i = 1; $i <= 12; $i++): ?>
                             <option value="<?= $i ?>"><?= $i ?> Hour<?= $i > 1 ? 's' : '' ?></option>
@@ -49,14 +49,14 @@
 
                 <div class="mb-5">
                     <label for="paymentSelect" class="text-start text-light mb-2">Payment method</label>
-                    <select class="border-0 rounded-1 p-2 w-100" id="paymentSelect">
+                    <select class="rounded p-2 w-100" id="paymentSelect">
                         <option value="" disabled selected>Select payment</option>
                         <option value="gcash">GCash</option>
                         <option value="cash">Cash</option>
                     </select>
                 </div>
 
-                <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-100" id="payButton" style="background-color: #3a4058" disabled>PAY NOW</button>
+                <button class="btn btn-dark border rounded-pill fs-3 w-100" id="payButton" disabled>PAY NOW</button>
             </div>
         </div>
     </div>

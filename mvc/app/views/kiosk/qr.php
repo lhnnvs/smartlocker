@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex min-vh-100" style="background-color: #333">
+<body class="d-flex bg-dark vh-100">
     <div class="container d-flex flex-column text-white fs-3 px-5 py-4" style="max-width: 768px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex justify-content-between">
             <a href="<?= ROOT ?>/kiosk" class="text-white"><i class="bi bi-chevron-left"></i></a>
@@ -21,7 +21,7 @@
             <div class="d-flex justify-content-center border rounded-5 bg-white mb-5 p-4 w-50">
                 <canvas class="w-100" id="qr-code"></canvas>
             </div>
-            <button class="btn btn-secondary border-0 rounded-pill text-white fs-3 w-75" id="BackButton" onclick="window.location.href='<?= ROOT ?>/kiosk'" style="background-color: #3a4058">Back</button>
+            <button class="btn btn-dark border rounded-pill fs-3 w-75" id="BackButton" onclick="window.location.href='<?= ROOT ?>/kiosk'">Back</button>
         </div>
     </div>
 

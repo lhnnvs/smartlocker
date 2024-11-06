@@ -29,8 +29,8 @@
     </style>
 </head>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #333;">
-    <div class="container d-flex flex-column flex-fill text-white fs-4 pt-4 px-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg');">
+<body class="d-flex flex-column bg-dark vh-100">
+    <div class="container d-flex flex-column flex-fill text-white fs-4 pt-4 px-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex justify-content-between">
             <a href="<?= ROOT ?>/mobile/home" class="text-white"><i class="bi bi-chevron-left"></i></a>
             <div></div>
@@ -47,11 +47,11 @@
                         <div class="digit" id="digit5">_</div>
                         <div class="digit" id="digit6">_</div>
                     </div>
-                    <button class="bg-transparent border-0 me-4" id="toggleButton" onclick="toggleShow()" style="color: lightgray;">
+                    <button class="bg-transparent border-0 me-4 text-light" id="toggleButton" onclick="toggleShow()">
                         <i class="bi bi-eye-fill" id="eyeIcon"></i>
                     </button>
                 </div>
-                <button class="btn btn-light border-0 rounded-1 fw-bold fs-4 w-75" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/mobile/terminate'">Confirm</button>
+                <button class="btn btn-light fw-bold fs-4 w-75" id="confirmButton" onclick="window.location.href='<?= ROOT ?>/mobile/terminate'">Confirm</button>
             </div>
         </div>
     </div>

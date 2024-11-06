@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex min-vh-100" style="background-color: #333;">
+<body class="d-flex bg-dark vh-100">
     <div class="container d-flex flex-column text-white fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex justify-content-between mb-5">
             <a href="<?= ROOT ?>/mobile" class="text-white"><i class="bi bi-arrow-left"></i></a>
@@ -25,7 +25,7 @@
                 <label class="text-light fs-6">PHONE NUMBER</label>
                 <input type="tel" class="form-control fs-4" id="userPhone" placeholder="Phone number" required inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
-            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 w-100" id="proceedButton" style="background-color: #3a4058">PROCEED</button>
+            <button class="btn btn-dark border fs-4 w-100" id="proceedButton">PROCEED</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

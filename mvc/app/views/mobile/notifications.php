@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex text-white min-vh-100" style="background-color: #222">
-    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<body class="d-flex text-white bg-dark vh-100">
+    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex align-itmes-center justify-content-between w-100">
             <a href="<?= ROOT ?>/mobile/home" class="text-white"><i class="bi bi-arrow-left"></i></a>
             <div class="fw-bold">Notifications</div>

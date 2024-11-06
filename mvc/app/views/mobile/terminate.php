@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="d-flex text-white min-vh-100" style="background-color: #222">
-    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<body class="d-flex text-white bg-dark vh-100">
+    <div class="container d-flex flex-column align-items-center fs-4 p-4" style="max-width: 390px; background-image: url('../assets/images/bg.jpg'); background-size: cover;">
         <div class="d-flex align-itmes-center justify-content-between w-100">
             <a href="<?= ROOT ?>/mobile/home" class="text-white"><i class="bi bi-arrow-left"></i></a>
             <div class="fw-bold me-2">Retrieve</div>
@@ -20,8 +20,8 @@
             <img src="../../public/assets/images/terminate.png" class="mb-2">
             <h4 class="fw-bold mb-3">This will end your rent.<br>Are you sure?</h4>
             <div class="text-light fs-6 mb-4">Make sure to retrieve all items<br>before closing</div>
-            <button class="btn btn-danger border-0 rounded-1 text-white fs-4 mb-3 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
-            <button class="btn btn-secondary border-0 rounded-1 text-white fs-4 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/home'" style="background-color: #3a4058">Back to safety</button>
+            <button class="btn btn-danger rounded text-white fs-4 mb-3 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>
+            <button class="btn btn-secondary bg-dark rounded text-white fs-4 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/home'">Back to safety</button>
         </div>
     </div>
 </body>
