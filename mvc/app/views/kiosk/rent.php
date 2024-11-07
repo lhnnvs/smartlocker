@@ -70,6 +70,37 @@
             const payButton = $('#payButton');
             const paymentSelect = $('#paymentSelect');
             const locker = "<?= isset($_GET['locker']) ? $_GET['locker'] : '' ?>";
+            const currentTimeDisplay = $('#currentTime');
+            const timeSelect = $('#timeSelect');
+            
+            function updateCurrentTime() {
+                const now = new Date();
+                let hours = now.getHours();
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+
+                const formattedTime = `${hours}:${minutes} ${ampm}`;
+                currentTimeDisplay.text(formattedTime);
+                
+                const currentHour = now.getHours();
+                const maxHours = Math.max(0, 21 - currentHour);
+
+                timeSelect.find('option').each(function() {
+                    const optionValue = parseInt($(this).val());
+                    if (optionValue > maxHours) {
+                        $(this).prop('disabled', true);
+                    } else {
+                        $(this).prop('disabled', false);
+                    }
+                });
+            }
+
+            setInterval(updateCurrentTime, 60000);
+
+            updateCurrentTime();
 
             function updatePayButtonState() {
                 const selectedHours = parseInt($('#timeSelect').val());
@@ -80,7 +111,7 @@
 
             $('#timeSelect').on('change', function() {
                 const selectedHours = parseInt($(this).val());
-                const totalPrice = (basePrice * selectedHours).toFixed(2);
+                const totalPrice = (basePrice * selectedHours);
                 amountDisplay.text(`P${totalPrice}`);
 
                 updatePayButtonState();
@@ -93,7 +124,7 @@
             payButton.on('click', function() {
                 const paymentMethod = paymentSelect.val();
                 const selectedHours = parseInt($('#timeSelect').val());
-                const totalPrice = (basePrice * selectedHours).toFixed(2);
+                const totalPrice = (basePrice * selectedHours);
 
                 if (paymentMethod === 'gcash') {
                     window.location.href = "<?= ROOT ?>/kiosk/gcash";

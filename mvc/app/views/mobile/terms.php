@@ -56,7 +56,7 @@
                         For any questions or concerns regarding these terms, please contact us at 09058312848.</p><br><br>
                 </div>
             </div>
-            <div class="d-flex position-fixed bottom-0 start-50 translate-middle-x bg-white p-4 w-100" style="max-width: 390px;">
+            <div class="d-flex position-fixed bottom-0 start-50 translate-middle-x bg-white px-4 py-3 w-100" style="max-width: 390px;">
                 <button class="btn btn-light border fs-5 w-100" id="declineButton" onclick="window.location.href='<?= ROOT ?>/mobile'">&#x10102; Decline</button>
                 <button class="btn btn-dark fs-5 ms-3 w-100" id="proceedButton" onclick="window.location.href='<?= ROOT ?>/mobile/home'">&#x1F5F8; Accept</button>
             </div>

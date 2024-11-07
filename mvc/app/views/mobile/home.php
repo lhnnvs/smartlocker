@@ -31,7 +31,7 @@
                 <div>09012345678</div>
             </div>
         </div>
-        <h1 class="fw-bold" style="font-size: 3rem;">002</h1>
+        <h1 class="fw-bold" style="font-size: 3rem;">001</h1>
         <div class="text-light mb-4">Locker</div>
 
         <?php
@@ -54,7 +54,7 @@
         <div class="text-light mb-4" id="actionLabel"><?= $actionLabel ?></div>
 
         <div class="bg-dark rounded-3 text-start p-3 w-100">
-            <label for="" class="fw-bold mb-1">Locker 002</label>
+            <label for="" class="fw-bold mb-1">Locker 001</label>
             <div class="d-flex justify-content-between">
                 <div class="text-light">
                     <div class="mb-1">Size</div>
@@ -63,7 +63,7 @@
                     <div>Until</div>
                 </div>
                 <div class="text-end">
-                    <div class="mb-1">Small</div>
+                    <div class="mb-1">Medium</div>
                     <div class="mb-1 <?= $statusValueClass ?>" id="statusValue"><?= $statusValueText ?></div>
                     <div class="mb-1" id="fromTime"></div>
                     <div id="untilTime"></div>

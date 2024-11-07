@@ -24,7 +24,7 @@
 
   <div class="d-flex justify-content-center bg-white fs-5 p-5 w-100">
     <form action="" method="POST" class="w-75">
-      <h3 class="fw-bold text-center my-5">Sign in</h3>
+      <h3 class="fw-bold text-center my-5 pb-5">Sign in</h3>
       <div class="d-flex flex-column mb-4">
         <label for="" class="fw-bold mb-2">Email</label>
         <input type="text" class="border-1 rounded p-2" name="email" placeholder="Enter your email address" value="<?= get_var('email') ?>">
@@ -36,12 +36,12 @@
 
       <?php if (!empty($errors)): ?>
 
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show p-2" role="alert">
           <?php foreach ($errors as $error): ?>
             <?= $error . "<br>" ?>
           <?php endforeach; ?>
 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <button type="button" class="btn-close mt-1 py-2" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
       <?php endif; ?>
