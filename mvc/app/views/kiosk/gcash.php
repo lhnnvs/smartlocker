@@ -16,7 +16,7 @@
             <div></div>
         </div>
         <div class="d-flex flex-fill flex-column align-items-center justify-content-center px-5">
-            <img src="../../public/assets/images/gcash.png" class="mb-4 w-75" alt="GCash Logo">
+            <img src="../assets/images/gcash.png" class="mb-4 w-75" alt="GCash Logo">
             <h1 class="fw-bold mb-5">SCAN TO PAY HERE</h1>
             <div class="d-flex justify-content-center rounded-5 bg-white mb-5 p-4 w-50">
                 <canvas class="w-100" id="qr-code"></canvas>

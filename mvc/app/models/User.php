@@ -2,29 +2,19 @@
 
 class User extends Model
 {
-
   public function validate($data)
   {
     $this->errors = [];
-
-    if (empty($data['firstname'])) {
-      $this->errors['firstname'] = "First name is required.";
+    if (empty($data['firstname']) || empty($data['lastname']) || empty($data['email']) || empty($data['password'])) {
+      $this->errors['required_fields'] = "Please fill in all required fields.";
     }
 
-    if (empty($data['lastname'])) {
-      $this->errors['lastname'] = "Last name is required.";
-    }
-
-    if (empty($data['email'])) {
-      $this->errors['email'] = "Email is rquired.";
-    } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+    if (!empty($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
       $this->errors['email'] = "Email is not valid.";
     }
 
-    if (empty($data['password'])) {
-      $this->errors['password'] = "Password is required.";
-    } else if (strlen($data['password']) < 6) {
-      $this->errors['password'] = "Password must be atleast 6 characters long.";
+    if (!empty($data['password']) && strlen($data['password']) < 8) {
+      $this->errors['password'] = "Password must be at least 8 characters long.";
     }
 
     if (count($this->errors) == 0) {

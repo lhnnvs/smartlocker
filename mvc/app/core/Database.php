@@ -4,7 +4,6 @@ class Database
 {
   public function connect()
   {
-    // users - id, firstname, lastname, email, password
     $string = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
     $con = new PDO($string, DB_USER, DB_PASS);
     return $con;

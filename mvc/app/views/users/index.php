@@ -1,48 +1,54 @@
-<?php include PATH . "partials/header.php" ?>
+<?php
+$title = "Admins";
+include PATH . "partials/sidebar.php"
+?>
 
-<div class="container">
-
-  <div class="mt-5 d-flex justify-content-between align-items-center">
-    <h2>List of Users</h2>
-
-    <a href="<?= ROOT ?>/users/create" class="btn btn-primary">Add New</a>
+  <div class="px-4 overflow-auto" style="max-height: calc(100vh - 100px);">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="bg-white p-4 rounded shadow-sm">
+          <div class="d-flex justify-content-between mb-3 w-100">
+            <div class="d-flex gap-2">
+              <div class="fw-bold">Showing:</div>
+              <div class="text-decoration-underline">All</div>
+            </div>
+            <a href="<?= ROOT ?>/users/create" class="text-black text-decoration-none">Add New</a>
+          </div>
+          <table class="table table-borderless">
+            <tr>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Manage</th>
+            </tr>
+            <?php if ($users != null) { ?>
+              <?php foreach ($users as $item) { ?>
+                <tr>
+                  <td><img src="<?= ROOT ?>/<?= $item->image ?>" alt="" class="rounded-circle me-3" width="30px" height="30px"><?= $item->firstname ?> <?= $item->lastname ?></td>
+                  <td><?= $item->contact ?></td>
+                  <td><?= $item->email ?></td>
+                  <td>
+                    <a href="<?= ROOT ?>/users/edit/<?= $item->id ?>" class="text-black"><i class="bi bi-pencil-square me-2" title="Edit"></i></a>
+                    <a href="<?= ROOT ?>/users/delete/<?= $item->id ?>" class="text-black"><i class="bi bi-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+              <?php } ?>
+            <?php } else { ?>
+              <tr>
+                <td colspan="3">
+                  <div>No record found.</div>
+                </td>
+              </tr>
+            <?php } ?>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <table class="table table-striped mt-3">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Image</th>
-      <th></th>
-    </tr>
-    <?php if ($users != null) { ?>
-      <?php foreach ($users as $item) { ?>
-        <tr>
-          <td><?= $item->firstname ?></td>
-          <td><?= $item->lastname ?></td>
-          <td><?= $item->email ?></td>
-          <td>
-            <img width="50px" height="50px" src="<?= ROOT ?>/<?= $item->image ?>" alt="">
-          </td>
-          <td>
-            <a href="<?= ROOT ?>/users/edit/<?= $item->id ?>" class="btn btn-success btn-sm">Edit</a>
-            <a href="<?= ROOT ?>/users/delete/<?= $item->id ?>" class="btn btn-danger btn-sm">Delete</a>
-          </td>
-        </tr>
-      <?php } ?>
-    <?php } else { ?>
-      <tr>
-        <td colspan="3">
-          <h3>No record found.</h3>
-        </td>
-      </tr>
-    <?php } ?>
-  </table>
-
 </div>
 
-<script src="<?= ROOT ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?= ROOT ?>../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

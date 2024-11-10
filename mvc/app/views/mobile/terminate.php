@@ -17,7 +17,7 @@
             <div></div>
         </div>
         <div class="d-flex flex-fill flex-column align-items-center justify-content-center text-center px-5">
-            <img src="../../public/assets/images/terminate.png" class="mb-2">
+            <img src="../assets/images/terminate.png" class="mb-2">
             <h4 class="fw-bold mb-3">This will end your rent.<br>Are you sure?</h4>
             <div class="text-light fs-6 mb-4">Make sure to retrieve all items<br>before closing</div>
             <button class="btn btn-danger rounded text-white fs-4 mb-3 w-100" onclick="window.location.href='<?= ROOT ?>/mobile/error'">Confirm</button>

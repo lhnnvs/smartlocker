@@ -37,7 +37,7 @@ class Users extends Controller
 
           if ($_FILES['image']['error'] == 0 && in_array($_FILES['image']['type'], $allowed)) {
 
-            $folder = 'assets/images/';
+            $folder = 'assets/users/';
 
             if (!file_exists($folder)) {
               mkdir($folder, 0777, true);

@@ -20,10 +20,10 @@ class Login extends Controller
           Auth::authenticate($row);
           redirect('home');
         } else {
-          $errors['errors'] = "Invalid email or password.";
+          $errors['errors'] = "Invalid email or password. Please try again.";
         }
       } else {
-        $errors['errors'] = "Invalid email or password.";
+        $errors['errors'] = "Invalid email or password. Please try again.";
       }
     }
 

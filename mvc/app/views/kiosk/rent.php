@@ -86,7 +86,7 @@
                 currentTimeDisplay.text(formattedTime);
                 
                 const currentHour = now.getHours();
-                const maxHours = Math.max(0, 21 - currentHour);
+                const maxHours = Math.max(0, 20 - currentHour);
 
                 timeSelect.find('option').each(function() {
                     const optionValue = parseInt($(this).val());
