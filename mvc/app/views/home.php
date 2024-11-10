@@ -76,7 +76,7 @@ include PATH . "partials/sidebar.php"
                         <div class="d-flex justify-content-center w-50">
                             <div>
                                 <div class="mb-2">
-                                    <div>Occupied</div>
+                                    <div>Rented</div>
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="legend-dot bg-secondary"></div>
                                         <span class="fs-4 fw-bold">1</span>
@@ -138,7 +138,7 @@ include PATH . "partials/sidebar.php"
                                 <td>P50</td>
                                 <td>P50</td>
                                 <td>1 Hour</td>
-                                <td>11/08/2024</td>
+                                <td>12/08/2024</td>
                                 <td>7:12 PM</td>
                                 <td>8:12 PM</td>
                             </tr>
@@ -150,7 +150,7 @@ include PATH . "partials/sidebar.php"
                                 <td>P20</td>
                                 <td>P60</td>
                                 <td>3 Hours</td>
-                                <td>11/08/2024</td>
+                                <td>12/08/2024</td>
                                 <td>12:50 PM</td>
                                 <td>3:50 PM</td>
                             </tr>
@@ -162,7 +162,7 @@ include PATH . "partials/sidebar.php"
                                 <td>P20</td>
                                 <td>P40</td>
                                 <td>2 Hours</td>
-                                <td>11/08/2024</td>
+                                <td>12/08/2024</td>
                                 <td>10:03 AM</td>
                                 <td>12:03 PM</td>
                             </tr>

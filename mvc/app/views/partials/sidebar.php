@@ -50,11 +50,11 @@
         <a href="<?= ROOT ?>/users" class="d-flex align-items-center text-white text-decoration-none hover-bg-light rounded px-5 py-3 mb-2 w-100">
             <i class="bi bi-person me-2"></i>Admins
         </a>
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none hover-bg-light rounded px-5 py-3 mb-2 w-100">
+        <a href="<?= ROOT ?>/reports" class="d-flex align-items-center text-white text-decoration-none hover-bg-light rounded px-5 py-3 mb-2 w-100">
             <i class="bi bi-file-earmark-text me-2"></i>Reports
         </a>
-        <a href="#" class="d-flex align-items-center text-white ps-5 py-3 text-decoration-none hover-bg-light rounded mb-2 w-100">
-            <i class="bi bi-card-checklist me-2"></i>Maintenance Logs
+        <a href="<?= ROOT ?>/logs" class="d-flex align-items-center text-white ps-5 py-3 text-decoration-none hover-bg-light rounded mb-2 w-100">
+            <i class="bi bi-card-checklist me-2"></i>Logs
         </a>
         <a href="<?= ROOT ?>/loginhistory" class="d-flex align-items-center text-white text-decoration-none hover-bg-light rounded px-5 py-3 w-100">
             <i class="bi bi-clock-history me-2"></i>Login History

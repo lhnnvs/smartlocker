@@ -12,7 +12,6 @@ include PATH . "partials/sidebar.php"
                             <div class="fw-bold">Showing:</div>
                             <div class="text-decoration-underline">All (4)</div>
                         </div>
-                        <a href="" class="text-black text-decoration-none">Add New</a>
                     </div>
                     <table class="table table-borderless">
                         <thead>
@@ -30,7 +29,7 @@ include PATH . "partials/sidebar.php"
                                 <td>001</td>
                                 <td>Medium</td>
                                 <td>P50</td>
-                                <td>Occupied</td>
+                                <td>Rented</td>
                                 <td>Locked</td>
                                 <td>
                                     <i class="bi bi-lock me-2" title="Lock"></i>
