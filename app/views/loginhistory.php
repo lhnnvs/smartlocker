@@ -26,28 +26,28 @@ include "sidebar.php";
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/s.jpg">Jameson Lee</td>
+                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/profile.jpg">Jameson Lee</td>
                             <td>3 seconds ago</td>
                             <td>12/08/2024 9:00 AM</td>
                             <td>Chrome 124, Windows</td>
                             <td>Malolos, Philippines</td>
                         </tr>
                         <tr>
-                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/s.jpg">Jameson Lee</td>
+                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/profile.jpg">Jameson Lee</td>
                             <td>1 day ago</td>
                             <td>12/07/2024 8:54 AM</td>
                             <td>Chrome 124, Windows</td>
                             <td>Malolos, Philippines</td>
                         </tr>
                         <tr>
-                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/s.jpg">Jameson Lee</td>
+                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/profile.jpg">Jameson Lee</td>
                             <td>2 days ago</td>
                             <td>12/06/2024 8:55 AM</td>
                             <td>Chrome 124, Windows</td>
                             <td>Malolos, Philippines</td>
                         </tr>
                         <tr>
-                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/s.jpg">Jameson Lee</td>
+                            <td><img class="rounded-circle me-3" height="30px" width="30px" src="assets/images/profile.jpg">Jameson Lee</td>
                             <td>3 days ago</td>
                             <td>12/05/2024 8:30 AM</td>
                             <td>Chrome 124, Windows</td>
